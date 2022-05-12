@@ -4,7 +4,9 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
+    font-family: 'Montserrat';
 }
+
 
 /*  */
 
@@ -44,12 +46,27 @@
                     .noClick{
                         pointer-events: none;
                     }
+                    .noEvent{
+                        pointer-events: none;
+                    }
 /*----- position -----*/
                     .relative{
                         position: relative;
                     }
                     .absolute{
                         position: absolute;
+                    }
+                    .top{
+                        top: 0;
+                    }
+                    .right{
+                        right: 0;
+                    }
+                    .topRightIcon{
+                        font-size: 30px;
+                        top: 0;
+                        right: 0;
+                        padding: 10px;
                     }
 
                     

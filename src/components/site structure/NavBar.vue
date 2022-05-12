@@ -1,51 +1,46 @@
 <template>
-    <nav class="navBar flex spaceBetween width100 alignItemsCenter shadow">
+    <nav class="navBar flex spaceBetween width100 alignItemsCenter shadow relative">
         <img src="@/assets/images/logo-Poullaouen.jpg" alt="" class="logo">
         <div class="menu">
         
         </div>
         <ul class="navLinkBox flex alignItemsCenter">
-            <li class="navLink">
-                <a href="">
+            <li class="navLink pointer" name="mairie" @click.prevent="openMenu">
                     <p>MA</p>
+
                     <b>MAIRIE</b>
-                </a>
             </li>
 
             <li class="separator"></li>
             
-            <li class="navLink">
-                <a href="">
+            <li class="navLink pointer" name="quotidien" @click.prevent="openMenu">
                     <p>MON</p>
+
                     <b>QUOTIDIEN</b>
-                </a>
             </li>
             
             <li class="separator"></li>
 
-            <li class="navLink">
-                <a href="">
+            <li class="navLink pointer" name="sorties" @click.prevent="openMenu">
                     <p>MES</p>
+
                     <b>SORTIES</b>
-                </a>
             </li>
             
             <li class="separator"></li>
 
-            <li class="navLink">
-                <a href="">
+            <li class="navLink pointer" name="infos" @click.prevent="openMenu">
                     <p>MES</p>
+
                     <b>INFOS</b>
-                </a>
             </li>
 
             <li class="separator"></li>
 
-            <li class="navLink">
-                <a href="">
+            <li class="navLink pointer" name="demarches" @click.prevent="openMenu">
                     <p>MES</p>
+
                     <b>DEMARCHES</b>
-                </a>
             </li>
             
         </ul>
@@ -54,13 +49,13 @@
         </p>
 
         <div class="flex mobileAssets height100">
-            <div class="centered menuDropDown relative shadow">
+            <div class="centered menuDropDown relative shadow pointer" @click="tabMenuIsOn = true">
                     <b class="mobileMenu">MENU</b>
 
-                    <span class="menuArrow icon absolute">expand_more</span>
+                    <span class="menuArrow icon absolute r">expand_more</span>
             </div>
 
-            <div class="callBtn column flex height100 shadow">
+            <div class="callBtn column flex height100 shadow pointer">
                 <p class="flex alignItemsCenter lightText call">
                     appeler <span class="telIcon icon">call</span>
                 </p>
@@ -70,16 +65,82 @@
                 </p>
             </div>
         </div>
+
+        <div class="menuBox width100 height100 absolute centered">
+
+            <ul class="tabMenu relative" v-if="tabMenuIsOn == true">
+                <span class="absolute topRightIcon icon" @click.prevent="tabMenuIsOn = false">close</span>
+                <li class="pointer" name="mairie" @click.prevent="openMenu">
+                        <p>MA</p>
+
+                        <b>MAIRIE</b>
+                </li>
+                
+                <li class="pointer" name="quotidien" @click.prevent="openMenu">
+                        <p>MON</p>
+
+                        <b>QUOTIDIEN</b>
+                </li>
+
+                <li class="pointer" name="sorties" @click.prevent="openMenu">
+                        <p>MES</p>
+
+                        <b>SORTIES</b>
+                </li>
+
+                <li class="pointer" name="infos" @click.prevent="openMenu">
+                        <p>MES</p>
+
+                        <b>INFOS</b>
+                </li>
+
+                <li class="pointer" name="demarches" @click.prevent="openMenu">
+                        <p>MES</p>
+
+                        <b>DEMARCHES</b>
+                </li>
+            </ul>
+            
+            <div class="slidingBox panel relative"  v-if="menuDisplayTexts">
+                <div class="menuImgBox">
+                    <img src="@/assets/images/mairie.jpg" alt="">
+                </div>
+
+                <ul>
+                    <li class="menuItem " v-for="text in menuDisplayTexts" :key="text.text">
+                        <router-link class="link" :to="text.target">{{text.text}}</router-link>
+                    </li>
+                </ul>
+                <span class="absolute topRightIcon icon" @click.prevent="menuDisplayTexts = null">close</span>
+            </div>
+        </div>
+        
     </nav>
+    
   
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
+import { menuTexts } from '@/composables/texts/texts'
+const menuDisplayTexts = ref(null)
+
+const menuImage = ref('')
+const tabMenuIsOn = ref(false)
+const openTabMenu = () => {
+
+}
+
+const openMenu = (e) => {
+    menuDisplayTexts.value = menuTexts[e.target.getAttribute('name')]
+}
+
 </script>
 
 <style scoped>
 .navBar{
-    padding: 20px max(15px, 1.5vw);
+    background-color: #fff;
+    padding: 20px 0;
     height: 15vh;
 }
 @media (max-width: 345px) { 
@@ -123,22 +184,29 @@
 }
 .logo{
     height: max(50px, 4.5vw);
+    margin-left: max(15px, 1.5vw);
 }
-.navLink > a > p, .navLink > a > b, .telNum{
+.navLink > p, .navLink > b{
+    pointer-events: none;
+}
+.navLink > p, .navLink > b, .telNum{
     font-family: 'Montserrat';
     font-size: max(12px, 1.5vw);
 }
-.navLink > a > p, .menuDropDown > p {
+.navLink > p, .menuDropDown > p {
     font-weight: 400;
     color: var(--lightblue);
 }
-.navLink > a > b, .menuDropDown > b {
+.navLink > b, .menuDropDown > b {
     color: var(--darkblue);
 }
 .separator{
     height: max(20px, 2vw);
     border-left: 3px solid var(--brown);
     margin: 0 2.3vw;
+}
+.mobileAssets{
+    margin-right: max(15px, 1.5vw);
 }
 .menuDropDown{
     height: 100%;
@@ -153,7 +221,6 @@
     margin-right: 15px;
 }
 .menuArrow{
-    
     bottom: 0;
 }
 .menuDropDown > .mobileMenu, .menuDropDown > *{
@@ -163,6 +230,7 @@
 .telNum{
     color: var(--darkblue);
     font-weight: 800;
+    margin-right: max(15px, 1.5vw);
 }
 .telIcon{
     font-size: 30px;
@@ -178,5 +246,78 @@
 .num{
     font-size: 14px;
     font-weight: 400;
+}
+.menuBox{
+    z-index: -1;
+    transform: translateY(100%);
+}
+.menuImgBox{
+    border-radius: var(--panelradius);
+    overflow: hidden;
+}
+.menuImgBox > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slidingBox{
+    background-color: #fff;
+    border-radius: var(--panelradius);
+    margin-top: 20px;
+    padding: 20px 50px 20px 20px;
+    display: flex;
+}
+.menuItem{
+    color: var(--darkblue);
+    padding: 4px 0;
+    border-bottom: 1px solid var(--brown);
+}
+.menuItem > a, .menuItem > a:visited, menuItem > a:active{
+    color: var(--darkblue);
+}
+@media (max-width: 500px) {
+    .slidingBox{
+        width: 90vw;
+    }
+    .menuItem{
+        font-size: max(14px, 1vw);
+    }
+}
+@media (max-width: 1080px) { 
+    .slidingBox{
+        flex-direction: column;
+    }
+    .slidingBox > ul{
+        padding-top: 20px;
+    }
+    .menuImgBox{
+        width: 150px;
+        height: 100px;
+    }
+}
+@media (min-width: 1080px) { 
+    .menuItem{
+        font-size: 22px;
+    }
+    .slidingBox{
+        flex-direction: row;
+    }
+    .slidingBox > ul{
+        padding-left: 20px;
+    }
+    .menuImgBox{
+        width: 300px;
+        top: 0;
+        bottom: 0;
+    }
+}
+.tabMenu{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: var(--panelradius);
+    margin-top: 20px;
+}
+.tabMenu > li {
+    margin-top: 10px;
 }
 </style>

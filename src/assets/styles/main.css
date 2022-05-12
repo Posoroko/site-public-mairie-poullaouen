@@ -10,7 +10,8 @@
     --boxshadow: 1px 4px 5px rgba(0, 0, 0, 0.15);
 
     --buttonradius: 5px;
-
+    --panelradius: 15px;
+    --mainwidth: min(100%, 1200px);
   }
 
 .mainWidth{
@@ -27,4 +28,7 @@
                 
 .shadow{
     box-shadow: var(--boxshadow);
+}
+.panel{
+    padding: 20px;
 }

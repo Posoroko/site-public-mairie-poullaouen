@@ -1,5 +1,5 @@
 <template>
-    <NavBar />
+    <NavBar class="navBar" />
 
     <router-view />
 
@@ -11,5 +11,7 @@ import NavBar from '@/components/site structure/NavBar'
 
 
 <style scoped>
-
+.navBar{
+    z-index: 10;
+}
 </style>
