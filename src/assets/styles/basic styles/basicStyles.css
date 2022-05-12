@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+/*  */
+
+
+/*-- width and height --*/
+                    .full{
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .width100{
+                        width: 100%;
+                    }
+                    .height100{
+                        height: 100%;
+                    }
+
+/*-- display: --*/
+
+                    .inLine{
+                        display: inline-block;
+                    }
+                    .block{
+                        display: block;
+                    }
+                    .centered{
+                        display: grid;
+                        place-items: center;
+                    }
+
+/*-- mouse styles --*/
+                    .pointer{
+                        cursor: pointer;
+                    }
+                    .selectNone{
+                        user-select: none;
+                    }
+                    .noClick{
+                        pointer-events: none;
+                    }
+/*----- position -----*/
+                    .relative{
+                        position: relative;
+                    }
+                    .absolute{
+                        position: absolute;
+                    }
+
+                    
