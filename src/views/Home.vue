@@ -1,20 +1,22 @@
 <template>
     <PageHeader :title="pageTitle" :path="pagePath" />
     
-    <main>
-        
-
+    <main class="flex column alignItemsCenter">
+        <EnUnClic />
+        <AgendaHome />
     </main>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import PageHeader from '@/components/site structure/PageHeader'
+import EnUnClic from '@/components/site structure/EnUnClic';
+import AgendaHome from '@/components/site structure/AgendaHome'
 import PathBar from '@/components/site structure/PathBar'
 import { headerImages } from '@/assets/images/imageUrls'
 
 
-const pageTitle = ref('Poullaouen')
+const pageTitle = ref('Bienve à Poullaouën')
 const pagePath = ref([{
     name: 'accueil',
     target: 'Home'
@@ -26,9 +28,7 @@ const pagePath = ref([{
 </script>
 
 <style scoped>
-main{
-    height: 100vh;
-}
+
 
 
 

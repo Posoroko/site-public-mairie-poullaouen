@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap');
 
 :root {
     --lightblue: #0080c9;
@@ -7,7 +8,7 @@
     --brown: #936037;
     --green: #63b32e;
 
-    --boxshadow: 1px 4px 5px rgba(0, 0, 0, 0.15);
+    --boxshadow: 2px 4px 3px rgba(0, 0, 0, 0.518);
 
     --buttonradius: 5px;
     --panelradius: 15px;
@@ -18,6 +19,13 @@
     width: min(100%, 1200px);
     padding: 0 20px;
 }
+.shadow{
+    box-shadow: var(--boxshadow);
+}
+.panel{
+    padding: 20px;
+}
+
 
 /*-- icons --*/
 
@@ -26,9 +34,22 @@
                     cursor: pointer;
                 }
                 
-.shadow{
-    box-shadow: var(--boxshadow);
-}
-.panel{
-    padding: 20px;
-}
+
+
+/*----- sections -----*/
+
+                .sectionTitleBox{
+                    width: 100%;
+                }
+                .sectionTitleBox > H1{
+                    font-family: 'Oleo script';
+                    font-size: 36px;
+                    margin-top: 50px;
+                }
+                .stripe{
+                    width: max(150px, 12vw);
+                    height: 12px;
+                    background-color: var(--darkblue);
+                    border-radius: 8px;
+                    margin-top: 10px;
+                }

@@ -102,4 +102,30 @@ const menuTexts = {
         }
     ]
 }
-export { menuTexts}
+const oneClickers = [
+    { 
+        text: 'Menu de la cantine',
+        icon: 'restaurant'
+    },
+    {
+        text: 'Bulletin municipal',
+        icon: 'newspaper'
+    },
+    {
+        text: 'Horraire des commerces',
+        icon: 'shopping_cart'
+    },
+    {
+        text: 'Chemins de randonnée',
+        icon: 'hiking'
+    },
+    {
+        text: 'Album photo',
+        icon: 'photo_library'
+    },
+    {
+        text: 'actualités',
+        icon: 'feed'
+    }
+]
+export { menuTexts, oneClickers }
