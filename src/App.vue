@@ -1,15 +1,15 @@
 <template>
     <NavBar />
 
-    <router-view/>
+    <router-view />
 
 </template>
 <script setup>
-import NavBar from '@/components/NavBar'
+import NavBar from '@/components/site structure/NavBar'
 
 </script>
 
 
-<style lang="sass" scoped>
+<style scoped>
 
 </style>

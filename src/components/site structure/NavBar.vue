@@ -1,6 +1,6 @@
 <template>
     <nav class="navBar flex spaceBetween width100 alignItemsCenter shadow">
-        <img src="../assets/images/logo-Poullaouen.jpg" alt="" class="logo">
+        <img src="@/assets/images/logo-Poullaouen.jpg" alt="" class="logo">
         <div class="menu">
         
         </div>
@@ -54,14 +54,13 @@
         </p>
 
         <div class="flex mobileAssets height100">
-            
-            <div class="centered menuDropDown relative">
+            <div class="centered menuDropDown relative shadow">
                     <b class="mobileMenu">MENU</b>
 
                     <span class="menuArrow icon absolute">expand_more</span>
             </div>
 
-            <div class="callBtn column flex height100">
+            <div class="callBtn column flex height100 shadow">
                 <p class="flex alignItemsCenter lightText call">
                     appeler <span class="telIcon icon">call</span>
                 </p>
@@ -81,9 +80,10 @@
 <style scoped>
 .navBar{
     padding: 20px max(15px, 1.5vw);
+    height: 15vh;
 }
-@media (max-width: 300px) { 
-    .call{
+@media (max-width: 345px) { 
+    .call, .menuArrow{
         display: none;
     }
     .mobileAssets{
@@ -95,7 +95,7 @@
         margin-top: 5px;
     }
 }
-@media (min-width: 300px) { 
+@media (min-width: 346px) { 
     .menu{
         font-size: 40px;
         margin-right: 20px;
@@ -124,12 +124,9 @@
 .logo{
     height: max(50px, 4.5vw);
 }
-.navLink{
-    padding: 0 max(10px, 1vw);
-}
-.navLink > a > p, .navLink > a > b{
+.navLink > a > p, .navLink > a > b, .telNum{
     font-family: 'Montserrat';
-    font-size: max(14px, 1.5vw);
+    font-size: max(12px, 1.5vw);
 }
 .navLink > a > p, .menuDropDown > p {
     font-weight: 400;
@@ -141,10 +138,14 @@
 .separator{
     height: max(20px, 2vw);
     border-left: 3px solid var(--brown);
+    margin: 0 2.3vw;
 }
 .menuDropDown{
     height: 100%;
-    background-color: var(--brown);
+    /* background-color: var(--brown); */
+    background-color: #936037;
+    background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
+
     border-radius: var(--buttonradius);
     padding: 0px 20px
 }
@@ -168,7 +169,9 @@
 }
 .callBtn{
     border-radius: var(--buttonradius);
-    background-color: var(--lightblue);
+    /* background-color: var(--lightblue); */
+    background-color: #0080c9;
+    background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
     padding: 5px 10px;
     margin-left: 20px;
 }

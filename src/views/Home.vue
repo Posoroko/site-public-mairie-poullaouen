@@ -1,23 +1,34 @@
 <template>
+    <PageHeader :title="pageTitle" :path="pagePath" />
+    
     <main>
-        <PageHeader :image="pageHeaderImage" />
+        
 
     </main>
 </template>
 
 <script setup>
-import PageHeader from '@/components/PageHeader'
+import { ref } from 'vue';
+import PageHeader from '@/components/site structure/PageHeader'
+import PathBar from '@/components/site structure/PathBar'
 import { headerImages } from '@/assets/images/imageUrls'
-const props = defineProps(['image'])
 
+
+const pageTitle = ref('Poullaouen')
+const pagePath = ref([{
+    name: 'accueil',
+    target: 'Home'
+}])
 
 
 
 
 </script>
 
-<style lang="sass" scoped>
-
+<style scoped>
+main{
+    height: 100vh;
+}
 
 
 
