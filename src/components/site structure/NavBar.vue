@@ -49,10 +49,10 @@
         </p>
 
         <div class="flex mobileAssets height100">
-            <div class="centered menuDropDown relative shadow pointer" @click="tabMenuIsOn = true">
+            <div class="centered menuDropDown relative shadow pointer" @click="tabMenuIsOn = true, menuDisplayTexts = null">
                     <b class="mobileMenu">MENU</b>
 
-                    <span class="menuArrow icon absolute r">expand_more</span>
+                    <span class="menuArrow icon absolute">expand_more</span>
             </div>
 
             <div class="callBtn column flex height100 shadow pointer">
@@ -69,7 +69,8 @@
         <div class="menuBox width100 height100 absolute centered">
 
             <ul class="tabMenu relative" v-if="tabMenuIsOn == true">
-                <span class="absolute topRightIcon icon" @click.prevent="tabMenuIsOn = false">close</span>
+                <span class="absolute topRightIcon icon" @click.prevent="tabMenuIsOn = false, menuDisplayTexts = null">close</span>
+                
                 <li class="pointer" name="mairie" @click.prevent="openMenu">
                         <p>MA</p>
 
@@ -132,7 +133,9 @@ const openTabMenu = () => {
 }
 
 const openMenu = (e) => {
+    console.log(e.target.getAttribute('name'))
     menuDisplayTexts.value = menuTexts[e.target.getAttribute('name')]
+    tabMenuIsOn.value = false
 }
 
 </script>
@@ -186,18 +189,18 @@ const openMenu = (e) => {
     height: max(50px, 4.5vw);
     margin-left: max(15px, 1.5vw);
 }
-.navLink > p, .navLink > b{
+.navLink > p, .navLink > b, .tabMenu > li > *{
     pointer-events: none;
 }
 .navLink > p, .navLink > b, .telNum{
     font-family: 'Montserrat';
     font-size: max(12px, 1.5vw);
 }
-.navLink > p, .menuDropDown > p {
+.navLink > p, .menuDropDown > p, .tabMenu > li > p {
     font-weight: 400;
     color: var(--lightblue);
 }
-.navLink > b, .menuDropDown > b {
+.navLink > b, .menuDropDown > b, .tabMenu > li > b {
     color: var(--darkblue);
 }
 .separator{
@@ -269,7 +272,7 @@ const openMenu = (e) => {
 }
 .menuItem{
     color: var(--darkblue);
-    padding: 4px 0;
+    
     border-bottom: 1px solid var(--brown);
 }
 .menuItem > a, .menuItem > a:visited, menuItem > a:active{
@@ -280,7 +283,8 @@ const openMenu = (e) => {
         width: 90vw;
     }
     .menuItem{
-        font-size: max(14px, 1vw);
+        font-size: max(18px, 1vw);
+        padding: 6px;
     }
 }
 @media (max-width: 1080px) { 
@@ -298,6 +302,7 @@ const openMenu = (e) => {
 @media (min-width: 1080px) { 
     .menuItem{
         font-size: 22px;
+        padding: 6px;
     }
     .slidingBox{
         flex-direction: row;
@@ -318,6 +323,10 @@ const openMenu = (e) => {
     margin-top: 20px;
 }
 .tabMenu > li {
+    margin-top: 10px;
+}
+.tabMenu > li > * {
+    font-size: 24px;
     margin-top: 10px;
 }
 </style>
