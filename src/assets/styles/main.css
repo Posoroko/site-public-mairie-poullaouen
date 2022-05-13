@@ -29,37 +29,21 @@
 .marginTop20{
     margin-top: 20px;
 }
-
+.marginAuto{
+    margin: auto;
+}
 /*-- icons --*/
 
                 .icon, i{
                     font-family: 'Material Icons';
                     cursor: pointer;
                 }
+
                 
-
-
-/*----- sections -----*/
-
-                .sectionTitleBox{
-                    width: 100%;
-                }
-                .sectionTitleBox > H1{
-                    font-family: 'Oleo script';
-                    font-size: 36px;
-                    margin-top: 50px;
-                }
-                .stripe{
-                    width: max(150px, 12vw);
-                    height: 12px;
-                    background-color: var(--darkblue);
-                    border-radius: 8px;
-                    margin-top: 10px;
-                }
 /*----- buttons -----*/
 
-                button{
-                    font-size: 20px;
+                button, .button{
+                    /* font-size: 20px; */
                     font-weight: 600;
                     padding: 10px;
                     border-width: 0;

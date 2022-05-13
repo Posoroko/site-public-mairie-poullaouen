@@ -1,6 +1,6 @@
 <template>
     <section class="mainWidth">
-        <SectionTitleBox title="Actualités" color="var(--darkblue)" />
+        <SectionTitleBox title="En 1 click" color="var(--darkblue)" />
 
         <div class="oneClickerBox width100 flex spaceAround wrap">
             <div class="roundBtnBox centered" v-for="clicker in oneClickers" :key="clicker.icon">

@@ -1,6 +1,8 @@
 <template>
     <section class="width100 actualiteSection" v-if="documents">
-        <SectionTitleBox title="Actualités" color="var(--darkblue)" />
+        <div class="mainWidth marginAuto">
+            <SectionTitleBox title="Actualités" color="var(--darkblue)" />
+        </div>
 
         <div class="actuBox width100 flex center" v-for="doc in documents" :key="doc.id">
             <div class="mainWidth flex content marginTop20">
@@ -18,7 +20,11 @@
                 </div>
             </div>
         </div>
-     
+        <div class="width100 centered">
+            <button class="mainWidth actuButton">
+                voir toutes les actualités
+            </button>
+        </div>
 
     </section>
 </template>
@@ -79,7 +85,7 @@ section{
     margin-top: 10px;
 }
 .rightBox > .content {
-    font-size: 22px;
+    font-size: 18px;
     margin-top: 20px;
 }
 .actualiteSection > :nth-child(3){
@@ -89,6 +95,13 @@ section{
 .actualiteSection > :nth-child(3) > div > .rightBox > .date,
 .actualiteSection > :nth-child(3) > div > .rightBox > .content{
     color: white;
+}
+.actuButton{
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px;
+    background-color: var(--brown);
 }
 
 </style>

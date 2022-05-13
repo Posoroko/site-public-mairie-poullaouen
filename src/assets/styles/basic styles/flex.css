@@ -40,6 +40,9 @@
         .alignItemsCenter{
             align-items: center;
         }
+        .alignItemsFlexEnd{
+            align-items: center;
+        }
 
 /*-- flex-wrap: --*/
         .wrap{
