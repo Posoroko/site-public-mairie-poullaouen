@@ -4,6 +4,7 @@
     <main class="flex column alignItemsCenter">
         <EnUnClic />
         <AgendaHome />
+        <ActualitesHome />
     </main>
 </template>
 
@@ -12,6 +13,7 @@ import { ref } from 'vue';
 import PageHeader from '@/components/site structure/PageHeader'
 import EnUnClic from '@/components/site structure/EnUnClic';
 import AgendaHome from '@/components/site structure/AgendaHome'
+import ActualitesHome from '@/components/site structure/ActualitesHome'
 import PathBar from '@/components/site structure/PathBar'
 import { headerImages } from '@/assets/images/imageUrls'
 

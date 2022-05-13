@@ -1,0 +1,42 @@
+<template>
+    <div class="sectionTitleBox width100">
+        <h1>{{title}}</h1>
+
+        <div class="stripe"></div>
+    </div>
+</template>
+
+<script setup>
+import { ref, onMounted } from 'vue';
+
+const props = defineProps({
+    title: String,
+    color: String
+})
+const titleColor = ref(null)
+
+onMounted(() => {
+    titleColor.value = props.color
+})
+
+
+</script>
+
+<style scoped>
+
+.sectionTitleBox > H1{
+    color: v-bind(titleColor);
+    font-family: 'Oleo script';
+    font-size: 36px;
+    margin-top: 50px;
+}
+.stripe{
+    width: max(150px, 12vw);
+    height: 12px;
+    background-color: var(--darkblue);
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+
+</style>

@@ -1,10 +1,7 @@
 <template>
     <section class="width100 flex center">
         <div class="mainWidth">
-            <div class="sectionTitleBox lightText">
-                <h1>Agenda</h1>
-                <div class="stripe"></div>
-            </div>
+            <SectionTitleBox title="Agenda" color="white" />
 
             <div class="newsBox width100 flex wrap spaceAround"  v-if="documents">
                 <div class="newsCardBox centered " v-for="doc in documents" :key="doc.id">
@@ -31,6 +28,8 @@
 </template>
 
 <script setup>
+import SectionTitleBox from '@/components/site structure/SectionTitleBox'
+
 import { ref, onMounted } from 'vue';
 import { getCollection } from '@/composables/directusLibrary';
 const error = ref(null)
@@ -59,6 +58,7 @@ section{
     /* background: radial-gradient(circle, rgb(0, 74, 77) 5%, rgba(0,47,74,1) 97%); */
     background: linear-gradient(90deg, rgba(147,96,55,1) 0%, rgba(0,47,74,1) 97%);
     padding-bottom: 50px;
+    box-shadow: var(--boxshadow)
 }
 .newsCard{
     width: 325px;

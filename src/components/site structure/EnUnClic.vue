@@ -1,9 +1,6 @@
 <template>
     <section class="mainWidth">
-        <div class="sectionTitleBox">
-            <h1>En 1 clic</h1>
-            <div class="stripe"></div>
-        </div>
+        <SectionTitleBox title="Actualités" color="var(--darkblue)" />
 
         <div class="oneClickerBox width100 flex spaceAround wrap">
             <div class="roundBtnBox centered" v-for="clicker in oneClickers" :key="clicker.icon">
@@ -18,6 +15,7 @@
 </template>
 
 <script setup>
+import SectionTitleBox from '@/components/site structure/SectionTitleBox'
 import { ref } from 'vue';
 import { oneClickers } from '@/composables/texts/texts'
 
