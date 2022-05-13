@@ -24,8 +24,11 @@
 }
 .panel{
     padding: 20px;
+    border-radius: var(--panelradius);
 }
-
+.marginTop20{
+    margin-top: 20px;
+}
 
 /*-- icons --*/
 
@@ -53,3 +56,25 @@
                     border-radius: 8px;
                     margin-top: 10px;
                 }
+/*----- buttons -----*/
+
+                button{
+                    font-size: 20px;
+                    font-weight: 600;
+                    padding: 10px;
+                    border-width: 0;
+                    border-radius: var(--buttonradius);
+                    box-shadow: var(--boxshadow);
+                    cursor: pointer;
+                }
+                .lightBtn{
+                    color: var(--darkblue);
+                    background-color: #fff;
+                    
+                }
+                .lightBtn:hover{
+                    color: white;
+                    background-color: var(--darkblue);
+                    
+                }
+                
