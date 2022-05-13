@@ -1,19 +1,21 @@
 <template>
-    <section class="mainWidth">
+    <section class="width100 actualiteSection" v-if="documents">
         <SectionTitleBox title="Actualités" color="var(--darkblue)" />
 
-        <div class="content flex marginTop20 width100">
-            <div class="leftBox centered relative">
-                <Pieds color="var(--brown)"/>
-                <div class="actuImgBox rr">
+        <div class="actuBox width100 flex center" v-for="doc in documents" :key="doc.id">
+            <div class="mainWidth flex content marginTop20">
+                <div class="leftBox centered relative">
+                    <Pieds color="var(--brown)"/>
+                    <div class="actuImgBox rr">
 
+                    </div>
                 </div>
-            </div>
 
-            <div class="rightBox flex column" v-if="document">
-                <h2>{{document.title}}</h2>
-                <p class="date">{{document.displayDate}}</p>
-                <p class="content">{{document.content}}</p>
+                <div class="rightBox flex column" >
+                    <h2>{{doc.title}}</h2>
+                    <p class="date">{{doc.displayDate}}</p>
+                    <p class="content">{{doc.content}}</p>
+                </div>
             </div>
         </div>
      
@@ -28,14 +30,14 @@ import { ref } from 'vue';
 import { getCollection } from '@/composables/directusLibrary';
 
 const error = ref(null)
-const document = ref(null)
+const documents = ref(null)
 
 
 //get data from directus
 
 
-getCollection('Actualites', 1).then(res => {
-        document.value = res.data[0]
+getCollection('Actualites', 3).then(res => {
+        documents.value = res.data
     }).catch(err => {
         error.value = err
         console.log(err)
@@ -51,9 +53,11 @@ getCollection('Actualites', 1).then(res => {
 section{
     padding-bottom: 50px;
 }
+.actuBox{
+    padding: 50px 0;
+}
 .leftBox{
     width: 45%;
-    height: 500px;
 }
 .actuImgBox{
     position: absolute;
@@ -64,8 +68,7 @@ section{
 }
 .rightBox{
     width: 55%;
-    height: 500px;
-    padding: 20px;
+    padding: 50px;
 }
 .rightBox > h2{
     font-size: 24px;
@@ -79,6 +82,13 @@ section{
     font-size: 22px;
     margin-top: 20px;
 }
-
+.actualiteSection > :nth-child(3){
+    background-color: var(--darkblue);
+}
+.actualiteSection > :nth-child(3) > div > .rightBox > h2,
+.actualiteSection > :nth-child(3) > div > .rightBox > .date,
+.actualiteSection > :nth-child(3) > div > .rightBox > .content{
+    color: white;
+}
 
 </style>
