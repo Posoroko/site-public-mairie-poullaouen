@@ -33,7 +33,7 @@ onMounted(() => {
 .stripe{
     width: max(150px, 12vw);
     height: 12px;
-    background-color: var(--darkblue);
+    background: linear-gradient(270deg, rgba(0,47,74,1) 0%, rgba(147,96,55,1) 100%); 
     border-radius: 8px;
     margin-top: 10px;
 }

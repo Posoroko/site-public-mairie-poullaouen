@@ -2,13 +2,13 @@
     <section class="mainWidth">
         <SectionTitleBox title="En 1 click" color="var(--darkblue)" />
 
-        <div class="oneClickerBox width100 flex spaceAround wrap">
-            <div class="roundBtnBox centered" v-for="clicker in oneClickers" :key="clicker.icon">
+        <div class="oneClickerBox width100 flex spaceAround wrap pointer">
+            <a class="roundBtnBox centered" v-for="clicker in oneClickers" :key="clicker.icon">
                 <div class="roundBtn">
                     <p class="icon">{{clicker.icon}}</p>
                     <p class="Wayne">{{clicker.text}}</p>
                 </div>
-            </div>
+            </a>
         </div>
 
     </section>
@@ -37,6 +37,7 @@ section{
 .roundBtn{
     background-color: var(--darkblue);
     border-radius: 50%;
+    margin-top: 20px;
     position: relative;
     box-shadow: var(--boxshadow);
 }
@@ -54,6 +55,7 @@ section{
     font-size: 20px;
     color: white;
     text-align: center;
+    padding: 0 10px;
     display: grid;
     place-items: center;
     position: absolute;
@@ -75,11 +77,11 @@ section{
         height: 120px;
     }
     .roundBtn > .icon{
-        font-size: 40px;
+        font-size: 50px;
         top: 10px;
     }
     .roundBtn > .Wayne{
-        font-size: 14px;
+        font-size: 12px;
         bottom: 10px;
     }
 }
@@ -98,11 +100,11 @@ section{
         height: 140px;
     }
     .roundBtn > .icon{
-        font-size: 50px;
+        font-size: 60px;
         top: 12px;
     }
     .roundBtn > .Wayne{
-        font-size: 16px;
+        font-size: 14px;
         bottom: 10px;
     }
 }
@@ -120,11 +122,11 @@ section{
         height: 160px;
     }
     .roundBtn > .icon{
-        font-size: 60px;
+        font-size: 70px;
         top: 12px;
     }
     .roundBtn > .Wayne{
-        font-size: 18px;
+        font-size: 16px;
         bottom: 10px;
     }
     .oneClickerBox > :nth-child(6){

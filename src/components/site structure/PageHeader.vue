@@ -8,7 +8,7 @@
             <p class="mainWidth path flex">
                     <a :href="link.targert" class="flexAlign pathStep" v-for="link in path" :key="link.name">
                         {{link.name}} 
-                        <b class="icon chevron">chevron_right</b> 
+                        <span class="icon chevron">chevron_right</span> 
                     </a>
             </p>
         </div>
@@ -76,6 +76,7 @@ const props = defineProps({
     margin-left: max(10px, 2vw);
     line-height: 20px;
     color: var(--darkblue);
+    line-height: 25px;
 }
 .titleBar{
     width: 100%;

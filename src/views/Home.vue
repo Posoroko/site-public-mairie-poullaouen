@@ -18,7 +18,7 @@ import PathBar from '@/components/site structure/PathBar'
 import { headerImages } from '@/assets/images/imageUrls'
 
 
-const pageTitle = ref('Bienve à Poullaouën')
+const pageTitle = ref('Bienvenue à Poullaouën')
 const pagePath = ref([{
     name: 'accueil',
     target: 'Home'

@@ -44,6 +44,7 @@ const documents = ref(null)
 
 getCollection('Actualites', 3).then(res => {
         documents.value = res.data
+        console.log('eric')
     }).catch(err => {
         error.value = err
         console.log(err)

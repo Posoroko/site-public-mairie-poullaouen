@@ -5,7 +5,7 @@
         
         </div>
         <ul class="navLinkBox flex alignItemsCenter">
-            <li class="navLink pointer" name="mairie" @click.prevent="openMenu">
+            <li class="navLink pointer" :class="{ 'activeTab': activeTab == 'mairie', 'tab': activeTab != 'mairie' }" name="mairie" @click.prevent="openMenu">
                     <p>MA</p>
 
                     <b>MAIRIE</b>
@@ -13,7 +13,7 @@
 
             <li class="separator"></li>
             
-            <li class="navLink pointer" name="quotidien" @click.prevent="openMenu">
+            <li class="navLink pointer" :class="{ 'activeTab': activeTab == 'quotidien', 'tab': activeTab != 'quotidien' }" name="quotidien" @click.prevent="openMenu">
                     <p>MON</p>
 
                     <b>QUOTIDIEN</b>
@@ -21,7 +21,7 @@
             
             <li class="separator"></li>
 
-            <li class="navLink pointer" name="sorties" @click.prevent="openMenu">
+            <li class="navLink pointer" :class="{ 'activeTab': activeTab == 'sorties', 'tab': activeTab != 'sorties' }" name="sorties" @click.prevent="openMenu">
                     <p>MES</p>
 
                     <b>SORTIES</b>
@@ -29,7 +29,7 @@
             
             <li class="separator"></li>
 
-            <li class="navLink pointer" name="infos" @click.prevent="openMenu">
+            <li class="navLink pointer" :class="{ 'activeTab': activeTab == 'infos', 'tab': activeTab != 'infos' }" name="infos" @click.prevent="openMenu">
                     <p>MES</p>
 
                     <b>INFOS</b>
@@ -37,7 +37,7 @@
 
             <li class="separator"></li>
 
-            <li class="navLink pointer" name="demarches" @click.prevent="openMenu">
+            <li class="navLink pointer" :class="{ 'activeTab': activeTab == 'demarches', 'tab': activeTab != 'demarches' }" name="demarches" @click.prevent="openMenu">
                     <p>MES</p>
 
                     <b>DEMARCHES</b>
@@ -71,7 +71,7 @@
             <ul class="tabMenu relative" v-if="tabMenuIsOn == true">
                 <span class="absolute topRightIcon icon" @click.prevent="tabMenuIsOn = false, menuDisplayTexts = null">close</span>
                 
-                <li class="pointer" name="mairie" @click.prevent="openMenu">
+                <li class="pointer"  name="mairie" @click.prevent="openMenu">
                         <p>MA</p>
 
                         <b>MAIRIE</b>
@@ -126,6 +126,7 @@ import { ref, onMounted } from 'vue';
 import { menuTexts } from '@/composables/texts/texts'
 const menuDisplayTexts = ref(null)
 
+const activeTab = ref(null)
 const menuImage = ref('')
 const tabMenuIsOn = ref(false)
 const openTabMenu = () => {
@@ -133,7 +134,7 @@ const openTabMenu = () => {
 }
 
 const openMenu = (e) => {
-    console.log(e.target.getAttribute('name'))
+    activeTab.value = e.target.getAttribute('name')
     menuDisplayTexts.value = menuTexts[e.target.getAttribute('name')]
     tabMenuIsOn.value = false
 }
@@ -189,6 +190,26 @@ const openMenu = (e) => {
     height: max(50px, 4.5vw);
     margin-left: max(15px, 1.5vw);
 }
+.navLink{
+    padding: 0 2.3vw;
+    border-radius: 20px;
+}
+*{
+    transition: all 300ms;
+}
+.navLink:hover, .activeTab{
+    background-color: var(--brown);
+    background-color: var(--lightblue);
+}
+.tab > p{
+    color: var(--lightblue);
+}
+.tab > b{
+    color: var(--darkblue);
+}
+.navLink:hover > *, .activeTab > *{
+    color: white;
+}
 .navLink > p, .navLink > b, .tabMenu > li > *{
     pointer-events: none;
 }
@@ -198,25 +219,18 @@ const openMenu = (e) => {
 }
 .navLink > p, .menuDropDown > p, .tabMenu > li > p {
     font-weight: 400;
-    color: var(--lightblue);
-}
-.navLink > b, .menuDropDown > b, .tabMenu > li > b {
-    color: var(--darkblue);
 }
 .separator{
     height: max(20px, 2vw);
     border-left: 3px solid var(--brown);
-    margin: 0 2.3vw;
+    
 }
 .mobileAssets{
     margin-right: max(15px, 1.5vw);
 }
 .menuDropDown{
     height: 100%;
-    /* background-color: var(--brown); */
     background-color: #936037;
-    background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
-
     border-radius: var(--buttonradius);
     padding: 0px 20px
 }
@@ -240,9 +254,7 @@ const openMenu = (e) => {
 }
 .callBtn{
     border-radius: var(--buttonradius);
-    /* background-color: var(--lightblue); */
     background-color: #0080c9;
-    background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
     padding: 5px 10px;
     margin-left: 20px;
 }
