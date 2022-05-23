@@ -2,7 +2,7 @@
     <PageHeader :title="pageTitle" :path="pagePath" />
     
     <main class="r flex column">
-        <section class="mayorSection width100 alignItemsCenter topSectionTopMargin">
+        <section class="mayorSection width100 alignItemsCenter topSectionTopMargin ">
 
             <div class="mainWidth marginAuto">
                 <p class="pageTopText ">Ici, une phrase d'accroche.</p>
@@ -45,6 +45,17 @@
             <SectionAdjoints />
         </section>
         
+        <section>
+            <SectionConseillers />
+        </section>
+        
+        <section>
+            <SectionCommissions />
+        </section>
+
+        <section>
+            <SectionDelegation />
+        </section>
         
     </main>
 </template>
@@ -53,6 +64,9 @@
 import { ref } from 'vue';
 import Pieds from '@/components/site structure/Pieds'
 import SectionAdjoints from '@/components/ma mairie/equipe/SectionAdjoints'
+import SectionConseillers from '@/components/ma mairie/equipe/SectionConseillers'
+import SectionCommissions from '@/components/ma mairie/equipe/SectionCommissions'
+import SectionDelegation from '@/components/ma mairie/equipe/SectionDelegation'
 import PageHeader from '@/components/site structure/PageHeader'
 import SectionTitleBox from '@/components/site structure/SectionTitleBox'
 import { directus } from '@/directus/config';
