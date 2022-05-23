@@ -1,14 +1,17 @@
 <template>
     <nav class="navBar flex spaceBetween width100 alignItemsCenter shadow relative">
-        <img src="@/assets/images/logo-Poullaouen.jpg" alt="" class="logo">
+
+            <img src="@/assets/images/logo-Poullaouen.jpg" alt="logo de la Mairie de Poullaouen" class="logo">
+
+
         <div class="menu">
         
         </div>
         <ul class="navLinkBox flex alignItemsCenter">
             <li class="navLink pointer" :class="{ 'activeTab': activeTab == 'mairie', 'tab': activeTab != 'mairie' }" name="mairie" @click.prevent="openMenu">
-                    <p>MA</p>
+                        <p>MA</p>
 
-                    <b>MAIRIE</b>
+                        <b>MAIRIE</b>
             </li>
 
             <li class="separator"></li>
@@ -109,7 +112,7 @@
 
                 <ul>
                     <li class="menuItem " v-for="text in menuDisplayTexts" :key="text.text">
-                        <router-link class="link" :to="text.target">{{text.text}}</router-link>
+                        <router-link class="link" :to="text.target" @click="menuDisplayTexts = null">{{text.text}}</router-link>
                     </li>
                 </ul>
                 <span class="absolute topRightIcon icon" @click.prevent="menuDisplayTexts = null">close</span>

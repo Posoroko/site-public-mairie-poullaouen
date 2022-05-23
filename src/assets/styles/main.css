@@ -63,3 +63,20 @@
                     
                 }
                 
+/*----- section common styles -----*/
+
+                .topSectionTopMargin{
+                    margin-top: max(30px, 5vw);
+                }
+                .pageTopText{
+                    font-size: max(14px, 1.2vw);
+                }
+                .sectionPadding{
+                    padding: 50px 0;
+                }
+                .sectionMargin{
+                    margin: 50px 0;
+                }
+                .sectionMarginTop{
+                    margin-top: 50px;
+                }

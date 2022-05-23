@@ -72,4 +72,7 @@ a, a:visited, a:active{
                         padding: 10px;
                     }
 
-                    
+/*----- margin  -----*/
+                    .marginTop20{
+                        margin-top: 20px;
+                    }

@@ -1,5 +1,7 @@
 import { headerImages } from '@/assets/images/imageUrls.js'
 
+import { routesMaMairie } from '@/router/routesMaMairie'
+
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 let headerImagesUrl = null
@@ -11,6 +13,7 @@ const routes = [
     component: Home,
     image: headerImages.home
   },
+  routesMaMairie.equipe
 ]
 
 const router = createRouter({
