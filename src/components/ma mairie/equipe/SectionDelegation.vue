@@ -6,16 +6,16 @@
 
         <div class="contentBox marginAuto mainWidth flex wrap center ">
             
-            <figure v-for="person in adjointsDelegues" :key="person.id" class="personCard">
+            <figure v-for="commission in commissions" :key="commission.id" class="commissionCard shadow">
                 <figcaption class="topCaption">
-                    <h2 class="centered name">{{person.firstName + ' ' + person.lastName}}</h2>
-                    <h2 class="centered role">{{person.role}}</h2>
+                    <h2 class="centered name">{{commission.name}}</h2>
+                    <h2 class="centered vicePresident">{{commission.vicePresident}}</h2>
                 </figcaption>
                 <div class="imgBox">
-                    <img :src="person.photoUrl" alt="">
+                    <img :src="commission.photoUrl" alt="">
                 </div>
                 <div class="bottomCaption">
-                    {{person.roleDetail}}
+                    <span class="member " v-for="member in commission.members" :key="member">{{member}}</span>
                 </div>
             </figure>
         </div>
@@ -28,54 +28,49 @@ import SectionTitleBox from '@/components/site structure/SectionTitleBox'
 import { directus } from '@/directus/config';
 
 
-const adjointsDelegues = ref(null)
-
-const comissions = [
+const commissions = ref([
     {
         name: 'Urbanisme - École',
         vicePresident: 'Vice-Présidente : Viviane MOISAN',
         photoUrl: '',
-        menbers: [
-            'D. GOUBIL', 'O. CORVEST', 'P. GODE', 'P.GUELLAFF', 
-            'A. LE CAM', 'K. LE CAM', 'G. LE GAL', 
-            'V. LE GALL', 'N. LE MOAL', 'Y. LOSSOUARN', 'J. PIROU', 
-            'S.ROUX', 'P. TALLEC'
+        members: [  "D. GOUBIL, ", "O. CORVEST, ", "P. GODE, ", 
+                    "P. GUELLAFF, ", "A. LE CAM, ", "K. LE CAM, ", 
+                    "G. LE GAL, ", "V. LE GALL, ", "N. LE MOAL, ", 
+                    "Y. LOSSOUARN, ", "J. PIROU, ", "S. ROUX, ", "P. TALLEC"
+        ]
+
+    },
+    {
+        name: 'Finances - commissionnel',
+        vicePresident: 'Vice-Présidente : Sophie ROUX',
+        photoUrl: '',
+        members: [  "D. GOUBIL, ", "O. CORVEST, ", "P. GODE, ", 
+                    "P. GUELLAFF, ", "A. LE CAM, ", "K. LE CAM, ", 
+                    "G. LE GAL, ", "V. LE GALL, ", "N. LE MOAL, ", 
+                    "Y. LOSSOUARN, ", "J. PIROU, ", "S. ROUX, ", "P. TALLEC"
         ]
     },
     {
-        name: 'Finances - Personnel',
+        name: 'Finances - commissionnel',
         vicePresident: 'Vice-Présidente : Sophie ROUX',
         photoUrl: '',
-        menbers: [
-            'D. GOUBIL', 'O. CORVEST', 'P. GODE', 'P.GUELLAFF', 
-            'A. LE CAM', 'K. LE CAM', 'G. LE GAL', 
-            'V. LE GALL', 'N. LE MOAL', 'Y. LOSSOUARN', 'J. PIROU', 
-            'S.ROUX', 'P. TALLEC'
+        members: [  "D. GOUBIL, ", "O. CORVEST, ", "P. GODE, ", 
+                    "P. GUELLAFF, ", "A. LE CAM, ", "K. LE CAM, ", 
+                    "G. LE GAL, ", "V. LE GALL, ", "N. LE MOAL, ", 
+                    "Y. LOSSOUARN, ", "J. PIROU, ", "S. ROUX, ", "P. TALLEC"
         ]
     },
     {
-        name: 'Finances - Personnel',
+        name: 'Finances - commissionnel',
         vicePresident: 'Vice-Présidente : Sophie ROUX',
         photoUrl: '',
-        menbers: [
-            'D. GOUBIL', 'O. CORVEST', 'P. GODE', 'P.GUELLAFF', 
-            'A. LE CAM', 'K. LE CAM', 'G. LE GAL', 
-            'V. LE GALL', 'N. LE MOAL', 'Y. LOSSOUARN', 'J. PIROU', 
-            'S.ROUX', 'P. TALLEC'
-        ]
-    },
-    {
-        name: 'Finances - Personnel',
-        vicePresident: 'Vice-Présidente : Sophie ROUX',
-        photoUrl: '',
-        menbers: [
-            'D. GOUBIL', 'O. CORVEST', 'P. GODE', 'P.GUELLAFF', 
-            'A. LE CAM', 'K. LE CAM', 'G. LE GAL', 
-            'V. LE GALL', 'N. LE MOAL', 'Y. LOSSOUARN', 'J. PIROU', 
-            'S.ROUX', 'P. TALLEC'
+        members: [  "D. GOUBIL, ", "O. CORVEST, ", "P. GODE, ", 
+                    "P. GUELLAFF, ", "A. LE CAM, ", "K. LE CAM, ", 
+                    "G. LE GAL, ", "V. LE GALL, ", "N. LE MOAL, ", 
+                    "Y. LOSSOUARN, ", "J. PIROU, ", "S. ROUX, ", "P. TALLEC"
         ]
     }
-]
+])
 
 
 </script>
@@ -84,41 +79,60 @@ const comissions = [
 .contentBox{
     padding: 50px 0;
 }
-.personCard{
-    width: min(250px, 100%);
-    background-color: var(--darkblue);
+.contentBox > :nth-child(1){
+        background-color: var(--darkblue);
+}
+.contentBox > :nth-child(2){
+        background-color: white;
+}
+.contentBox > :nth-child(2) > * > *{
+        color: black;
+}
+.contentBox > :nth-child(3){
+        background-color: var(--brown);
+}
+.contentBox > :nth-child(4){
+        background-color: var(--darkblue);
+}
+.commissionCard{
+    width: min(450px, 100%);
     border-radius: var(--panelradius);
     margin: 20px;
     overflow: hidden;
 }
-.personCard > .topCaption{
-    padding: 15px;
+.commissionCard > .topCaption{
+    padding: 20px;
 }
-.personCard > .imgBox{
+.commissionCard > .imgBox{
     width: 100%;
-    height: 200px;
+    height: 325px;
 }
 .name{
     color: white;
     font-size: 18px;
     font-weight: 400;
 }
-.role{
+.vicePresident{
     color: white;
     font-size: 16px;
     font-weight: 400;
     font-style: italic;
-    margin-top: 5px;
+    margin-top: 10px;
 }
-.personCard > div > img{
+.commissionCard > div > img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.personCard > .bottomCaption{
+.commissionCard > .bottomCaption{
     color: white;
     padding: 15px;
     text-align: center;
+}
+.member{
+    line-height: 30px;
+    letter-spacing: 3px;
+    font-weight: 300;
 }
 /* @media (min-width: 749px){
     .mayorSectionContentBox > .innerBox{

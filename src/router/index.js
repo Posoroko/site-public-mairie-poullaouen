@@ -13,7 +13,8 @@ const routes = [
     component: Home,
     image: headerImages.home
   },
-  routesMaMairie.equipe
+  routesMaMairie.equipe,
+  routesMaMairie.ccas,
 ]
 
 const router = createRouter({

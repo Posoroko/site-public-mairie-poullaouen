@@ -1,5 +1,5 @@
 <template>
-    <div class="sectionTitleBox width100">
+    <div class="sectionTitleBox mainWidth">
         <h1>{{title}}</h1>
 
         <div class="stripe"></div>

@@ -1,15 +1,20 @@
 <template>
     <PageHeader :title="pageTitle" :path="pagePath" />
     
-    <main class="r flex column">
-        <section class="mayorSection width100 alignItemsCenter topSectionTopMargin ">
+    <main class="flex column">
+        <p class="pageTopText mainWidth marginAuto sectionMarginTop">Ici, une phrase d'accroche.</p>
 
-            <div class="mainWidth marginAuto">
-                <p class="pageTopText ">Ici, une phrase d'accroche.</p>
+        <nav class="marginAuto sectionMarginTop">
+            <a class="filter" v-for="filter in filters" :key="filter.id" :href="filter.id">{{filter.filter}}</a>
+        </nav>
+        
+        <section class="mayorSection width100 alignItemsCenter topSectionTopMargin ">
+            
+            <div id="maire" class="mainWidth marginAuto">
                 <SectionTitleBox title="Le Maire" color="var(--darkblue)" />
             </div>
 
-            <div class="width100 mayorSectionContentBox sectionPadding sectionMargin relative flex center">
+            <div class="width100 mayorSectionContentBox sectionPadding marginTop100 relative flex center">
                 <div class="mainWidth innerBox flex">
                     <div class="box leftBox">
                         <figure class="mayorFigure width100" v-if="maire">
@@ -41,19 +46,19 @@
             </div>
         </section>
 
-        <section class="adjointsSection width100 sectionMarginTop">
+        <section id="adjoints" class="adjointsSection width100 sectionMarginTop">
             <SectionAdjoints />
         </section>
         
-        <section>
+        <section id="conseillers">
             <SectionConseillers />
         </section>
         
-        <section>
+        <section id="commissions">
             <SectionCommissions />
         </section>
 
-        <section>
+        <section id="delegations">
             <SectionDelegation />
         </section>
         
@@ -81,6 +86,10 @@ const pagePath = ref([{
 
 const maire = ref(null)
 
+const filters = ref([
+    { filter: "Le maire", id: "#maire"}, { filter: "Les adjoints et délégués", id: "#adjoints"}, 
+    { filter: "Les conseillers", id: "#conseillers" }, { filter: "Les commissions", id: "#commissions" }, { filter: "Les délégations", id: "#delegations" }
+])
 
 
 directus.items('Equipe').readByQuery({
@@ -101,6 +110,24 @@ directus.items('Equipe').readByQuery({
 <style scoped>
 main{
     margin-bottom: 500px;
+}
+nav{
+    width: 100%;
+    padding: 20px;
+    
+    display: flex;
+    justify-content: center;
+}
+.filter{
+    color:#fff;
+    font-size: 18px;
+    background-color: var(--brown);
+    padding: 10px 30px;
+    border-radius: 40px;
+    margin: 10px;
+    display: block;
+    box-shadow: var(--boxshadow);
+    cursor: pointer;
 }
 .mayorSectionContentBox{
     background-color: var(--darkblue);

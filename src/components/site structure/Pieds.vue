@@ -25,7 +25,7 @@ onMounted(() => {
     object-fit: contain;
 }
 .pied{
-    fill: v-bind('color');
+    fill: v-bind(color);
     filter: drop-shadow(var(--boxshadow));
 }
 </style>

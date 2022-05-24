@@ -16,6 +16,7 @@ import Footer from '@/components/site structure/Footer'
 
 <style scoped>
 .navBar{
+    position: fixed;
     z-index: 10;
 }
 </style>

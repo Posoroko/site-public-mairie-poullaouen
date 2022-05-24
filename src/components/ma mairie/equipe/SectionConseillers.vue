@@ -1,7 +1,7 @@
 <template>
     
         <div class="mainWidth marginAuto">
-            <SectionTitleBox title="members municipaux" color="var(--darkblue)" />
+            <SectionTitleBox title="Conseillers municipaux" color="var(--darkblue)" />
         </div>
 
         <div class="contentBox marginAuto mainWidth flex wrap center ">

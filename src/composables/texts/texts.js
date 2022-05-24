@@ -5,8 +5,8 @@ const menuTexts = {
             target: "/equipe-municipale"
         },
         {
-            text: "Le centre communald'action sociale (CCAS)",
-            target: "/le-centre-communale-d'action-sociale"
+            text: "Le centre communal d'action sociale (CCAS)",
+            target: "/centre-communal-d'action-sociale"
         },
         {
             text: "Les salles municipales",

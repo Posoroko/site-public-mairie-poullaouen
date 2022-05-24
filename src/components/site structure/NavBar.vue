@@ -1,7 +1,9 @@
 <template>
     <nav class="navBar flex spaceBetween width100 alignItemsCenter shadow relative">
 
-            <img src="@/assets/images/logo-Poullaouen.jpg" alt="logo de la Mairie de Poullaouen" class="logo">
+            <router-link to="/" @click="activeTab = null">
+                <img src="@/assets/images/logo-Poullaouen.jpg" alt="logo de la Mairie de Poullaouen" class="logo">
+            </router-link>
 
 
         <div class="menu">
@@ -72,7 +74,7 @@
         <div class="menuBox width100 height100 absolute centered">
 
             <ul class="tabMenu relative" v-if="tabMenuIsOn == true">
-                <span class="absolute topRightIcon icon" @click.prevent="tabMenuIsOn = false, menuDisplayTexts = null">close</span>
+                <span class="absolute topRightIcon icon" @click.prevent="tabMenuIsOn = false, menuDisplayTexts = null" @click="activeTab = null">close</span>
                 
                 <li class="pointer"  name="mairie" @click.prevent="openMenu">
                         <p>MA</p>
@@ -115,7 +117,7 @@
                         <router-link class="link" :to="text.target" @click="menuDisplayTexts = null">{{text.text}}</router-link>
                     </li>
                 </ul>
-                <span class="absolute topRightIcon icon" @click.prevent="menuDisplayTexts = null">close</span>
+                <span class="absolute topRightIcon icon" @click.prevent="menuDisplayTexts = null, activeTab = null">close</span>
             </div>
         </div>
         
@@ -127,6 +129,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { menuTexts } from '@/composables/texts/texts'
+
 const menuDisplayTexts = ref(null)
 
 const activeTab = ref(null)

@@ -1,5 +1,7 @@
+import { headerImages } from '@/assets/images/imageUrls.js'
+
 import Equipe from '@/views/ma mairie/Equipe'
-// import Ccas from '@/views/ma mairie/Ccas'
+import Ccas from '@/views/ma mairie/Ccas'
 // import Salles from '@/views/ma mairie/Salles'
 // import Bulletins from '@/views/ma mairie/Bulletins'
 // import ComptesRendus from '@/views/ma mairie/ComptesRendus'
@@ -10,14 +12,15 @@ const routesMaMairie = {
         equipe: {
             path: '/equipe-municipale',
             name: 'Equipe',
-            component: Equipe
+            component: Equipe,
+            image: headerImages.home
         },
-        // ccas: {
-        //     path: textes.routesMaMairie.ccas,
-        //     name: 'Ccas',
-        //     component: Ccas,
-        //     beforeEnter: requireAuth
-        // },
+        ccas: {
+            path: "/centre-communal-d'action-sociale",
+            name: 'Ccas',
+            component: Ccas,
+            image: headerImages.home
+        },
         // salles: {
         //     path: textes.routesMaMairie.salles,
         //     name: 'Salles',
