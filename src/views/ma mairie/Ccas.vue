@@ -3,12 +3,16 @@
     
     <main>
         <PhotoAndTextSection :styles="stylesSectionRole" :content="contentSectionRole" />
+
+        <SectionFootBehind :styles="stylesSectionRole" :content="contentSectionRole" />
+
     </main>
 </template>
 
 <script setup>
 import { ref } from 'vue';
-import PhotoAndTextSection from '@/components/site structure/PhotoAndTextSection'
+import PhotoAndTextSection from '@/components/site structure/sections/PhotoAndTextSection'
+import SectionFootBehind from '@/components/site structure/sections/SectionFootBehind'
 import PageHeader from '@/components/site structure/PageHeader'
 
 

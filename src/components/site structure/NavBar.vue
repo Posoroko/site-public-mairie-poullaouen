@@ -49,25 +49,30 @@
             </li>
             
         </ul>
-        <p class="telNum">
-            02.98.93.50.76
-        </p>
+        <div class="contactWidget">
+            <ContactWidget />
+        </div>
+        
 
-        <div class="flex mobileAssets height100">
-            <div class="centered menuDropDown relative shadow pointer" @click="tabMenuIsOn = true, menuDisplayTexts = null">
+        <div class="mobileAssets height100">
+            <div class="mobileMenuBtn lightText relative pointer" @click="tabMenuIsOn = true, menuDisplayTexts = null">
                     <b class="mobileMenu">MENU</b>
 
-                    <span class="menuArrow icon absolute">expand_more</span>
+                    <span class="menuArrow icon">expand_more</span>
             </div>
 
-            <div class="callBtn column flex height100 shadow pointer">
-                <p class="flex alignItemsCenter lightText call">
-                    appeler <span class="telIcon icon">call</span>
-                </p>
+            <div class="mobileAssetsCallBtnBox">
+                <div class="callBtn pointer">
+                    <p class="lightText">
+                        Poullaouen <span class="telIcon icon">call</span>
+                    </p>
+                </div>
 
-                <p class="num lightText">
-                    02.98.93.50.76
-                </p>
+                <div class="callBtn pointer">
+                    <p class="lightText ">
+                        Locmarie-Berrien <span class="telIcon icon">call</span>
+                    </p>
+                </div>
             </div>
         </div>
 
@@ -129,6 +134,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { menuTexts } from '@/composables/texts/texts'
+import ContactWidget from '@/components/site structure/ContactWidget'
 
 const menuDisplayTexts = ref(null)
 
@@ -150,8 +156,8 @@ const openMenu = (e) => {
 <style scoped>
 .navBar{
     background-color: #fff;
-    padding: 20px 0;
-    height: 15vh;
+    padding: 1vh 0;
+    height: nav(--navbarheight);
 }
 @media (max-width: 345px) { 
     .call, .menuArrow{
@@ -161,9 +167,9 @@ const openMenu = (e) => {
         flex-direction: column-reverse;
         align-items: flex-end;
     }
-    .menuDropDown{
-        font-size: 30px;
-        margin-top: 5px;
+    .mobileMenuBtn{
+        font-size: 16px;
+        padding: 5px 10px;
     }
 }
 @media (min-width: 346px) { 
@@ -173,22 +179,22 @@ const openMenu = (e) => {
     }
 }
 
-@media (max-width: 700px) { 
+@media (max-width: 850px) { 
     .menu, .mobileAssets{
         display: flex;
     }
-    .navLinkBox, .telNum {
+    .navLinkBox, .contactWidget{
         display: none;
     }
 }
-@media (min-width: 701px) { 
+@media (min-width: 851px) { 
     .menu, .mobileAssets{
         display: none;
     }
     .navLinkBox{
         display: flex;
     }
-    .telNum{
+    .contactWidget{
         display: block;
     }
 }
@@ -232,42 +238,33 @@ const openMenu = (e) => {
     
 }
 .mobileAssets{
-    margin-right: max(15px, 1.5vw);
+    margin-right: 2vw;
 }
-.menuDropDown{
-    height: 100%;
-    background-color: #936037;
+.mobileMenuBtn, .callBtn{
+    background-color: var(--lightblue);
+}
+.mobileMenuBtn{
+    font-size: 13px;
+    padding: 0 10px;
     border-radius: var(--buttonradius);
-    padding: 0px 20px
-}
-.menuDropDown > .separator{
-    margin-right: 15px;
-}
-.menuArrow{
-    bottom: 0;
-}
-.menuDropDown > .mobileMenu, .menuDropDown > *{
-    color: white;
-    font-size: 20px;
-}
-.telNum{
-    color: var(--darkblue);
-    font-weight: 800;
-    margin-right: max(15px, 1.5vw);
-}
-.telIcon{
-    font-size: 30px;
+    margin: 0 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .callBtn{
-    border-radius: var(--buttonradius);
-    background-color: #0080c9;
-    padding: 5px 10px;
-    margin-left: 20px;
+    border-radius: 20px;
+    margin: 1px 0;
 }
-.num{
-    font-size: 14px;
-    font-weight: 400;
+.callBtn > p{
+    font-size: 13px;
+    padding: 0.5em 1em;
+    display: flex;
+    justify-content: flex-end;
 }
+
+
 .menuBox{
     z-index: -1;
     transform: translateY(100%);

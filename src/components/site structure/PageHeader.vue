@@ -36,6 +36,7 @@ const props = defineProps({
 </script>
 
 <style scoped>
+
 @media (max-width: 700px) {
     .pathBar{
         display: none;
