@@ -8,7 +8,8 @@ const salles = [
             textPosition: '2', //set the oreder property of the flex element
             imagePosition: '1',
             footColor: 'var(--brown)',
-            tableColor: 'dark'
+            tableColor: 'dark',
+            
         },
         content: {
             title: "La salle des fêtes",
@@ -16,6 +17,8 @@ const salles = [
             text: "Cette salle est située au rez-de-chaussée du bâtiment de la Mairie. Elle ne comprend pas de cuisine mais dispose de 2 frigos, une scène avec une sono fixe et un bar. Des tables et des chaises sont également à votre disposition.",
             sitting: "60",
             standing: "120",
+            image: require('../../assets/images/ma_mairie/salles/amzer_zo/salle-amzer-zo.jpg'),
+            alt: "Salle des fête de Poullaouen",
             prices: {
                 habitants: {
                     oneDay: "220€",
@@ -47,6 +50,8 @@ const salles = [
             text: "Elle comprend une cuisine entièrement équipée (frigo et chambre froide), une pièce avec un bar, une autre pièce avec une scène et sono fixe. Des tables et des chaises sont à votre disposition.",
             sitting: "216",
             standing: "620",
+            image: require('../../assets/images/ma_mairie/salles/salle_locmaria/salle-locmaria-berrien.jpg'),
+            alt:"Salle Polyvalente Locmaria-Berrien",
             prices: {
                 habitants: {
                     oneDay: "220€",
@@ -81,6 +86,7 @@ const salles = [
             text: "Cette salle est située au rez-de-chaussée du complexe touristique, associatif et sportif, face à la voie verte. Elle peut être chauffée et comporte un point d’eau et un réfrigérateur.",
             sitting: "?",
             standing: "50",
+            image: require('../../assets/images/ma_mairie/salles/amzer_zo/salle-amzer-zo.jpg'),
             prices: {
                 habitants: {
                     oneDay: "80€",
@@ -112,6 +118,7 @@ const salles = [
             text: "Elle comprends une cuisine équipée.",
             sitting: "120",
             standing: "342",
+            image: require('../../assets/images/ma_mairie/salles/amzer_zo/salle-amzer-zo.jpg'),
             prices: {
                 habitants: {
                     oneDay: "150€",

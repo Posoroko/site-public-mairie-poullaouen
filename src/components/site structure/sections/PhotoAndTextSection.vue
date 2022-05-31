@@ -15,6 +15,7 @@
                         <div class="figBox absolute top right bottom left centered">
                             <figure>
                                 <img class="width100" src="@/assets/images/mairie.jpg" alt="">
+                                
                             </figure>
                         </div>
                     </div>

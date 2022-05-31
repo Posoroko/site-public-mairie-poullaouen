@@ -2,6 +2,8 @@
     <PageHeader :title="pageTitle" :path="pagePath" />
     
     <main>
+        
+
         <section class="width100 flex column alignItemsCenter" v-for="salle in salles" :key="salle.content.title">
             <SectionTitleBox :title="salle.content.title" :color="salle.styles.titleColor" />
 
@@ -64,17 +66,21 @@
 
                     <div class="box box2 text relative flex alignCenter">
                         <Pieds :color="salle.styles.footColor"/>
-                        <div class="figBox absolute top right bottom left centered">
+                        
+                        <div class="figBox absolute top right bottom left centered pointer">
                             <figure>
-                                <img class="width100" src="@/assets/images/mairie.jpg" alt="">
+                                <img class="width100" :src="salle.content.image" :alt="salle.content.alt" @click="openImage">
                             </figure>
                         </div>
                     </div>
                 </div>
             </div>
-
     </section>
 
+    <dialog ref="modal" class="modalImage marginAuto">
+        <img :src="requestedImage" :alt="requestedImageAlt">
+        <span class="icon absolute top right" @click="modal.close()">close</span>
+    </dialog>
 
     </main>
 </template>
@@ -87,13 +93,24 @@ import PageHeader from '@/components/site structure/PageHeader'
 import salles from '@/composables/texts/sallesMunicipales'
 
 
+
 const pageTitle = ref("Les salles municipales")
 const pagePath = ref([{
     name: 'accueil',
     target: 'Home'
 }])
 
+//open image in a modal
 
+const requestedImage = ref(null)
+const requestedImageAlt = ref(null)
+const modal = ref(null)
+
+const openImage = (e) => {
+    requestedImage.value = e.target.getAttribute('src')
+    requestedImageAlt.value = e.target.getAttribute('alt')
+    modal.value.showModal()
+}
 
 </script>
 

@@ -108,33 +108,24 @@ to sections with filter buttons -----*/
     color: var(--visitedlink);
 }
 
-.pricingTable{
+.modalImage{
+    width: min(100%, 1000px);
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.modalImage::backdrop{
+    background: rgba(36, 56, 72, 0.697);
+}
+.modalImage img{
     width: 100%;
-    border-width: 2px;
-    border-style: solid;
+    height: 100%;
+    object-fit: cover;
 }
-.pricingTable .tarif{
-    border-width: 1px;
-    border-style: solid;
-    padding: 5px;
-}
-.pricingTable .row{
-
-    display: flex;  
-}
-.pricingTable .row .cell{
-    width: calc(100% / 3);
-    
-    border-width: 1px;
-    border-style: solid;
-}
-.lightTable, .lightTable *, .lightTable * *{
-    border-color: white;
-}
-.darkTable, .darkTable *, .darkTable * *{
-    border-color: var(--darkblue);
-}
-.pricingTable * * {
-    padding: max(2px, 0.3vw) 0;
-    font-size: max(10px, 1vw)
+.modalImage .icon{
+    font-size: max(20px, 1.5vw);
+    background-color: white;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
 }
