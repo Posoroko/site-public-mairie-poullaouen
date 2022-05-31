@@ -89,7 +89,7 @@ const props = defineProps({
 .titleBar > h1 {
     font-family: 'Montserrat';
     font-weight: 900;
-    font-size: max(20px, 2.5vw);
+    font-size: max(20px, 2vw);
     letter-spacing: 2px;
 }
 </style>

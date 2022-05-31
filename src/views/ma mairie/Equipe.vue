@@ -8,9 +8,9 @@
             <a class="filter" v-for="filter in filters" :key="filter.id" :href="filter.id">{{filter.filter}}</a>
         </nav>
         
-        <section class="mayorSection width100 alignItemsCenter topSectionTopMargin ">
+        <section id="maire" class="mayorSection width100 alignItemsCenter teamSection">
             
-            <div id="maire" class="mainWidth marginAuto">
+            <div class="mainWidth marginAuto">
                 <SectionTitleBox title="Le Maire" color="var(--darkblue)" />
             </div>
 
@@ -46,19 +46,19 @@
             </div>
         </section>
 
-        <section id="adjoints" class="adjointsSection width100 sectionMarginTop">
+        <section id="adjoints" class="adjointsSection width100 sectionMarginTop teamSection">
             <SectionAdjoints />
         </section>
         
-        <section id="conseillers">
+        <section id="conseillers" class="teamSection">
             <SectionConseillers />
         </section>
         
-        <section id="commissions">
+        <section id="commissions" class="teamSection">
             <SectionCommissions />
         </section>
 
-        <section id="delegations">
+        <section id="delegations" class="teamSection">
             <SectionDelegation />
         </section>
         

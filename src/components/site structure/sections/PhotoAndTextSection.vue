@@ -7,10 +7,9 @@
                 <div class="contentBox mainWidth flex center alignItemsCenter">
                 
                     <div class="box box1 text centered">
-                        <p>
-                            {{content.text}}
-                        </p>
+                        <p v-html="content.text"></p>
                     </div>
+
                     <div class="box box2 text relative flex alignCenter">
                         <Pieds :color="footColor"/>
                         <div class="figBox absolute top right bottom left centered">
@@ -72,9 +71,6 @@ onMounted(() => {
     height: 100%;
     object-fit: cover;
 }
-section{
-    margin-top: 100px;
-}
 .bandeau{
     background-color: v-bind(backgroundColor);
     padding: 30px 0;
@@ -92,9 +88,9 @@ section{
     order: v-bind(textPosition);
 }
 .box1 > p {
-    font-size: 20px;
+    font-size: max(15px, 1.25vw);
     font-weight: 300;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.2px;
     line-height: 30px;
 }
 .box2{

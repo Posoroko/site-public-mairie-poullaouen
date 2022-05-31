@@ -14,8 +14,26 @@
     --panelradius: 15px;
     --mainwidth: min(100%, 1200px);
 
-    --navbarheight: 15vw
-  }
+    --navbarheight: 15vh;
+
+    --nonvisitedlink: rgb(0, 72, 144);
+    --visitedlink: rgb(84, 8, 117);
+}
+
+/*----- global page structure -----*/
+        .navBar{
+            height: var(--navbarheight);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+/*----- compensates for navBar thickness when jumping 
+to sections with filter buttons -----*/
+        .teamSection{
+            padding-top: 10vh;
+        }
+
+
 
 .mainWidth{
     width: min(100%, 1200px);
@@ -80,29 +98,10 @@
                     margin-top: 50px;
                 }
 
-.mobileAssets{
-    margin-right: 2vw;
+/*----- Links to external pages -----*/
+.externalLink{
+    color: var(--nonvisitedlink);
 }
-.mobileMenuBtn, .callBtn{
-    background-color: var(--lightblue);
-}
-.mobileMenuBtn{
-    font-size: 13px;
-    padding: 0 10px;
-    border-radius: var(--buttonradius);
-    margin: 0 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.callBtn{
-    border-radius: 20px;
-    margin: 1px 0;
-}
-.callBtn > p{
-    font-size: 13px;
-    padding: 0.5em 1em;
-    display: flex;
-    justify-content: flex-end;
+.externalLink:visited{
+    color: var(--visitedlink);
 }

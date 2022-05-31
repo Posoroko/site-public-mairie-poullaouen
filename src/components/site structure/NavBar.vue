@@ -1,5 +1,5 @@
 <template>
-    <nav class="navBar flex spaceBetween width100 alignItemsCenter shadow relative">
+    <nav class="navBar flex spaceBetween width100 alignItemsCenter shadow">
 
             <router-link to="/" @click="activeTab = null">
                 <img src="@/assets/images/logo-Poullaouen.jpg" alt="logo de la Mairie de Poullaouen" class="logo">
@@ -157,7 +157,7 @@ const openMenu = (e) => {
 .navBar{
     background-color: #fff;
     padding: 1vh 0;
-    height: nav(--navbarheight);
+
 }
 @media (max-width: 345px) { 
     .call, .menuArrow{

@@ -55,8 +55,8 @@
 
 <style scoped>
     footer{
-        height: 80vh;
-        padding-bottom: 150px;
+        min-height: 80vh;
+        padding-bottom: 50px;
     }
     .leftBox, .rightBox{
         display: flex;

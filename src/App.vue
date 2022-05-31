@@ -1,5 +1,5 @@
 <template>
-    <NavBar class="navBar" />
+    <NavBar />
 
     <router-view />
 
@@ -15,8 +15,5 @@ import Footer from '@/components/site structure/Footer'
 
 
 <style scoped>
-.navBar{
-    position: fixed;
-    z-index: 10;
-}
+
 </style>
