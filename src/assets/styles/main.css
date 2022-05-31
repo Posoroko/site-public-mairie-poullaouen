@@ -9,6 +9,7 @@
     --green: #63b32e;
 
     --boxshadow: 2px 4px 3px #00000084;
+    --boxshadowlift: 2px 4px 5px #000000bc;
 
     --buttonradius: 5px;
     --panelradius: 15px;
@@ -68,21 +69,31 @@ to sections with filter buttons -----*/
                 button, .button{
                     /* font-size: 20px; */
                     font-weight: 600;
-                    padding: 10px;
+                    padding: 10px 20px;
                     border-width: 0;
-                    border-radius: var(--buttonradius);
+                    /* border-radius: var(--buttonradius); */
+                    border-radius: 20px;
                     box-shadow: var(--boxshadow);
                     cursor: pointer;
                 }
                 .lightBtn{
                     color: var(--darkblue);
-                    background-color: #fff;
-                    
+                    background-color: #fff; 
                 }
                 .lightBtn:hover{
                     color: white;
-                    background-color: var(--darkblue);
-                    
+                    background-color: var(--darkblue);   
+                }
+                .darkBtn{
+                    color: white;
+                    background-color: var(--darkblue); 
+                }
+                .darkBtn:hover{
+                    color: white;
+                    opacity: 0.9;
+                }
+                button:hover{
+                    box-shadow: var(--boxshadowlift);
                 }
                 
 /*----- section common styles -----*/

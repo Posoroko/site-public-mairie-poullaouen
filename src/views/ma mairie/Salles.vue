@@ -61,15 +61,19 @@
                                 <div class="cell centered">{{salle.content.prices.exterieurs.twoDaysKitchen}}</div>
                             </div>
                         </div>
+
+                        <div class="flex rowReverse width100">
+                            <button class="marginTop30 darkBtn">voir l'album photo</button>
+                        </div>
                         
                     </div>
 
                     <div class="box box2 text relative flex alignCenter">
                         <Pieds :color="salle.styles.footColor"/>
-                        
+
                         <div class="figBox absolute top right bottom left centered pointer">
                             <figure>
-                                <img class="width100" :src="salle.content.image" :alt="salle.content.alt" @click="openImage">
+                                <img class="width100" :src="salle.images.main.url" :alt="salle.images.main.alt" @click="openImage">
                             </figure>
                         </div>
                     </div>
@@ -81,17 +85,20 @@
         <img :src="requestedImage" :alt="requestedImageAlt">
         <span class="icon absolute top right" @click="modal.close()">close</span>
     </dialog>
-
+    
+    <div class="width100 r">
+        <Carousel />
+    </div>
     </main>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import Pieds from '@/components/site structure/Pieds'
-import SectionTitleBox from '@//components/site structure/SectionTitleBox'
+import SectionTitleBox from '@/components/site structure/SectionTitleBox'
 import PageHeader from '@/components/site structure/PageHeader'
 import salles from '@/composables/texts/sallesMunicipales'
-
+import Carousel from '@/components/site structure/widgets/Carousel'
 
 
 const pageTitle = ref("Les salles municipales")
