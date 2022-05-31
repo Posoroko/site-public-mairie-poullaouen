@@ -15,6 +15,7 @@ const routes = [
   },
   routesMaMairie.equipe,
   routesMaMairie.ccas,
+  routesMaMairie.salles,
 ]
 
 const router = createRouter({

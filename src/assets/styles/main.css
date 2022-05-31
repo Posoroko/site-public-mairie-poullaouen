@@ -8,7 +8,7 @@
     --brown: #936037;
     --green: #63b32e;
 
-    --boxshadow: 2px 4px 3px rgba(0, 0, 0, 0.518);
+    --boxshadow: 2px 4px 3px #00000084;
 
     --buttonradius: 5px;
     --panelradius: 15px;
@@ -16,8 +16,10 @@
 
     --navbarheight: 15vh;
 
-    --nonvisitedlink: rgb(0, 72, 144);
-    --visitedlink: rgb(84, 8, 117);
+    --nonvisitedlink: #004890;
+    --visitedlink: #540875;
+    --darktext: #002f4a;
+    --lighttext: #ffffff;
 }
 
 /*----- global page structure -----*/
@@ -104,4 +106,35 @@ to sections with filter buttons -----*/
 }
 .externalLink:visited{
     color: var(--visitedlink);
+}
+
+.pricingTable{
+    width: 100%;
+    border-width: 2px;
+    border-style: solid;
+}
+.pricingTable .tarif{
+    border-width: 1px;
+    border-style: solid;
+    padding: 5px;
+}
+.pricingTable .row{
+
+    display: flex;  
+}
+.pricingTable .row .cell{
+    width: calc(100% / 3);
+    
+    border-width: 1px;
+    border-style: solid;
+}
+.lightTable, .lightTable *, .lightTable * *{
+    border-color: white;
+}
+.darkTable, .darkTable *, .darkTable * *{
+    border-color: var(--darkblue);
+}
+.pricingTable * * {
+    padding: max(2px, 0.3vw) 0;
+    font-size: max(10px, 1vw)
 }

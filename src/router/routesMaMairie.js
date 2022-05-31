@@ -2,7 +2,7 @@ import { headerImages } from '@/assets/images/imageUrls.js'
 
 import Equipe from '@/views/ma mairie/Equipe'
 import Ccas from '@/views/ma mairie/Ccas'
-// import Salles from '@/views/ma mairie/Salles'
+import Salles from '@/views/ma mairie/Salles'
 // import Bulletins from '@/views/ma mairie/Bulletins'
 // import ComptesRendus from '@/views/ma mairie/ComptesRendus'
 // import Arrêtés from '@/views/ma mairie/Arrêtés'
@@ -21,35 +21,30 @@ const routesMaMairie = {
             component: Ccas,
             image: headerImages.home
         },
-        // salles: {
-        //     path: textes.routesMaMairie.salles,
-        //     name: 'Salles',
-        //     component: Salles,
-        //     beforeEnter: requireAuth
-        // },
+        salles: {
+            path: "/Les-salles-communales",
+            name: 'Salles',
+            component: Salles,
+        },
         // bulletins: {
         //     path: textes.routesMaMairie.bulletins,
         //     name: 'Bulletins',
         //     component: Bulletins,
-        //     beforeEnter: requireAuth
         // },
         // comptesRendus: {
         //     path: textes.routesMaMairie.comptesRendus,
         //     name: 'Comptes-rendus',
         //     component: ComptesRendus,
-        //     beforeEnter: requireAuth
         // },
         // arrêtés: {
         //     path: textes.routesMaMairie.arrêtés,
         //     name: 'Arrêtés',
         //     component: Arrêtés,
-        //     beforeEnter: requireAuth
         // },
         // publications: {
         //     path: textes.routesMaMairie.publications,
         //     name: 'Publications',
         //     component: Publications,
-        //     beforeEnter: requireAuth
         // }
 }
 const buttons = 
