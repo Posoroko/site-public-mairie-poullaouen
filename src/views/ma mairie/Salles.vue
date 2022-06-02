@@ -86,9 +86,9 @@
         <span class="icon absolute top right" @click="modal.close()">close</span>
     </dialog>
     
-    <div class="width100 r">
+    <!-- <div class="width100 r">
         <Carousel />
-    </div>
+    </div> -->
     </main>
 </template>
 

@@ -76,7 +76,7 @@
             </div>
         </div>
 
-        <div class="menuBox width100 height100 absolute centered">
+        <div class="menuBox width100  absolute centered">
 
             <ul class="tabMenu relative" v-if="tabMenuIsOn == true">
                 <span class="absolute topRightIcon icon" @click.prevent="tabMenuIsOn = false, menuDisplayTexts = null" @click="activeTab = null">close</span>

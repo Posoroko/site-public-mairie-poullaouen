@@ -31,15 +31,18 @@ const salles = [
         },
         images: {
             main: {
-                url: require('../../assets/images/ma_mairie/salles/amzer_zo/salle-amzer-zo.jpg'),
-                alt: "Salle des fêtes de Poullaouën"
+                url: require('../../assets/images/ma_mairie/salles/salle_des_fetes/salle-des-fetes.jpg'),
+                alt: "Salle Amzer Zo de Plouuaouën"
             },
             album: [
-                require('../../assets/images/ma_mairie/salles/amzer_zo/salle-amzer-zo.jpg'),
-                require('../../assets/images/ma_mairie/salles/amzer_zo/salle-amzer-zo.jpg'),
-                require('../../assets/images/ma_mairie/salles/amzer_zo/salle-amzer-zo.jpg'),
-                require('../../assets/images/ma_mairie/salles/amzer_zo/salle-amzer-zo.jpg'),
-                require('../../assets/images/ma_mairie/salles/amzer_zo/salle-amzer-zo.jpg'),
+                {
+                    url: require('../../assets/images/ma_mairie/salles/salle_des_fetes/salle-des-fetes-01.jpg'),
+                    alt: "Intérieur de la salle Amzer Zo de Poullaouën"
+                },
+                {
+                    url: require('../../assets/images/ma_mairie/salles/salle_des_fetes/salle-des-fetes-02.jpg'),
+                    alt: "Cuisine de la salle Amzer Zo de Poullaouën"
+                },
             ]
         },
         kitchen: false

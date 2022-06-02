@@ -1,6 +1,7 @@
 import { headerImages } from '@/assets/images/imageUrls.js'
 
 import { routesMaMairie } from '@/router/routesMaMairie'
+import { routesMonQuotidien } from '@/router/routesMonQuotidien'
 
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
@@ -16,6 +17,9 @@ const routes = [
   routesMaMairie.equipe,
   routesMaMairie.ccas,
   routesMaMairie.salles,
+  routesMaMairie.bulletins,
+
+  routesMonQuotidien.associations
 ]
 
 const router = createRouter({
