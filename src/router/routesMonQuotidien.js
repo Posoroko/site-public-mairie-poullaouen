@@ -1,4 +1,4 @@
-// import Ecole from '@/views/mon quotidien/Ecole'
+import Ecole from '@/views/mon quotidien/Ecole'
 import Associations from '@/views/mon quotidien/Associations'
 // import Bibliothèque from '@/views/mon quotidien/Bibliothèque'
 // import Entreprises from '@/views/mon quotidien/Entreprises'
@@ -8,11 +8,11 @@ import Associations from '@/views/mon quotidien/Associations'
 
 
 const routesMonQuotidien =  {
-    // école: {
-    //     path: '/ecole',
-    //     name: 'Ecole',
-    //     component: Ecole
-    // },
+    ecole: {
+        path: "/l'ecole-municipale",
+        name: 'Ecole',
+        component: Ecole
+    },
     associations: {
         path: '/les-associations',
         name: 'Associations',

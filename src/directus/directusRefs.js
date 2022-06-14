@@ -53,6 +53,7 @@ const directusRefs = {
         agenda: 'Agenda',
         ecole: 'Ecole',
         ecoleSections: 'Ecole_sections',
+        ecoleSectionsCustom: 'Ecole_sections_custom',
         headerImagesUrl: 'Header_images_url',
         assosTypes: 'Assos_types'
     },
@@ -64,6 +65,7 @@ const directusRefs = {
         bulletins: '19eede4c-0ccd-4060-abc6-9c4845ac9f75',
         compteRendus: '313799c7-bcec-4896-aad3-f4bdf6290abc',
         ecolesSections: 'ac1d441e-cc5c-41e7-9c16-db99fd8ab1d4',
+        ecoleSectionsCustom: 'c2a77f42-8dce-4dc1-9572-9491aba5768a',
         entreprises: 'b9cdfd65-ef78-4535-a1cf-78d200b6f161',
         equipe: '7c38cda6-a881-4a0c-82d0-a65829925c8f',
         headerImages: '173ce407-1a74-40d3-af91-274be2368485',

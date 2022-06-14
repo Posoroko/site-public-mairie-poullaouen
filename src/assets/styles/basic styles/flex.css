@@ -51,3 +51,29 @@
         .wrapReverse{
             flex-wrap: wrap-reverse;
         }
+
+
+
+
+
+/*----- text color -----*/
+.defaultSectionsBox:nth-child(1) * ,
+.defaultSectionsBox:nth-child(3) * ,
+.defaultSectionsBox:nth-child(5) * ,
+.defaultSectionsBox:nth-child(8) * {
+    color: var(--darktext);
+}
+.defaultSectionsBox:nth-child(4) * {
+    color: var(--lighttext);
+    
+}
+.defaultSectionsBox:nth-child(4) .bandeau{
+    background-color: var(--brown);    
+}
+
+.defaultSectionsBox:nth-child(6) * {
+    color: var(--lighttext);  
+}
+.defaultSectionsBox:nth-child(6) .bandeau{
+    background-color: var(--darkblue);    
+}

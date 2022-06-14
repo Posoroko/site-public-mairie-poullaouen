@@ -1,5 +1,4 @@
 import { directus } from '@/directus/config'
-import directusRefs from '@/directus/directusRefs'
 
 let response = null
 let error = null
@@ -21,6 +20,5 @@ const getCollection = async (collection, limit) => {
         }
     })
 }
-
 
 export { getCollection }
