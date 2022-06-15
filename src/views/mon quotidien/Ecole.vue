@@ -169,7 +169,32 @@ getCollection(directusRefs.collections.ecoleSectionsCustom, -1).then(res => {
     background-color: var(--darkblue);    
 }
 
-
+/* custom sections */
+/* order of text and image */
+.customSectionsBox :nth-child(odd) * * .box1{
+    order: 1;
+    color: var(--darkblue);
+}
+.customSectionsBox :nth-child(odd) * * .box2{
+    order: 2;
+}
+.customSectionsBox :nth-child(even) * * .box1{
+    order: 2;
+    color: white;
+}
+.customSectionsBox :nth-child(even) * * .box2{
+    order: 1;
+}
+/* background color */
+.customSectionsBox :nth-child(4n+2) .bandeau{
+    background-color: var(--darkblue);
+}
+.customSectionsBox :nth-child(4n+4) .bandeau{
+    background-color: var(--brown);
+}
+.customSectionsBox :nth-child(4n+4) .bandeau .contentBox .box2 .foot svg .pied{
+    fill: white;
+}
 
 .schedule{
     width: 100%;
@@ -227,12 +252,14 @@ getCollection(directusRefs.collections.ecoleSectionsCustom, -1).then(res => {
 @media (max-width: 1200px){
     .defaultSectionsBox :nth-child(1) .bandeau .contentBox,
     .defaultSectionsBox :nth-child(4) .bandeau .contentBox,
-    .defaultSectionsBox :nth-child(6) .bandeau .contentBox{
+    .defaultSectionsBox :nth-child(6) .bandeau .contentBox,
+    .customSectionsBox :nth-child(even) .bandeau .contentBox{
         flex-direction: column;
     }
     .defaultSectionsBox :nth-child(3) .bandeau .contentBox,
     .defaultSectionsBox :nth-child(5) .bandeau .contentBox,
-    .defaultSectionsBox :nth-child(8) .bandeau .contentBox{
+    .defaultSectionsBox :nth-child(8) .bandeau .contentBox,
+    .customSectionsBox :nth-child(odd) .bandeau .contentBox{
         flex-direction: column-reverse;
     }
 }
