@@ -2,7 +2,7 @@
     <div class="menuBigBox width100 relative">
         <img class="paintBackground" src="@/assets/images/mon_quotidien/ecole/visuel-taches-de-peinture.svg" alt="">
 
-        <div class="menuBox spaceAround" v-if="schoolMenu">
+        <div class="menuBox spaceBetween" v-if="schoolMenu">
             <div class="arrowBox">
                 <span class="icon arrow" name="left" @click="navigateMenu">
                     arrow_left
@@ -97,7 +97,6 @@ const navigateMenu = (e) => {
 const schoolMenu = ref(null)
 directus.items('Ecole').readOne('julesFerry').then(res => {
     schoolMenu.value = JSON.parse(res.menu)
-    console.log(schoolMenu.value)
 }).catch(err => {
     console.log(err.message)
 })
@@ -116,9 +115,14 @@ directus.items('Ecole').readOne('julesFerry').then(res => {
     font-size: 30px;
 }
 .bigMenuBox{
-    margin: 50px;
+    margin: 100px;
     border: 1px solid white;
     display: block;
+}
+.menuBox{
+    /* border: 4px solid white; */
+    padding: 20px;
+    margin: 50px 0;
 }
 @media (max-width: 949px){
     .bigMenuBox{
@@ -158,11 +162,7 @@ directus.items('Ecole').readOne('julesFerry').then(res => {
     width: 100%;
     height: 100%;
 }
-.menuBox{
-    border: 4px solid white;
-    padding: 20px;
-    margin-top: 20px;
-}
+
 .dayBox{
     height: 100%;
     display: flex;
@@ -173,8 +173,7 @@ directus.items('Ecole').readOne('julesFerry').then(res => {
     font-weight: 600;
 }
 .mealCourse{
-    font-size: 18px;
-    
+    font-size: clamp(14px, 1.5vw, 20px);
     white-space: pre-wrap;
 }
 .dayBox p{
@@ -185,4 +184,5 @@ directus.items('Ecole').readOne('julesFerry').then(res => {
     place-items: center;
     padding: 15px 10px;
 }
+
 </style>

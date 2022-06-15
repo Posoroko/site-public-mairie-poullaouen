@@ -149,3 +149,28 @@ to sections with filter buttons -----*/
 
 
 
+/* order of text and image */
+.customSectionsBox :nth-child(odd) * * .box1{
+    order: 1;
+    color: var(--darkblue);
+}
+.customSectionsBox :nth-child(odd) * * .box2{
+    order: 2;
+}
+.customSectionsBox :nth-child(even) * * .box1{
+    order: 2;
+    color: white;
+}
+.customSectionsBox :nth-child(even) * * .box2{
+    order: 1;
+}
+/* background color */
+.customSectionsBox :nth-child(4n+2) .bandeau{
+    background-color: var(--darkblue);
+}
+.customSectionsBox :nth-child(4n+4) .bandeau{
+    background-color: var(--brown);
+}
+.customSectionsBox :nth-child(4n+4) .bandeau .contentBox .box2 .foot svg .pied{
+    fill: white;
+}
