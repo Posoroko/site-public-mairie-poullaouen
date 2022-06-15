@@ -36,11 +36,11 @@ const menuTexts = {
         },
         {
             text: "La médiathèque",
-            target: "/la-médiathèque"
+            target: "/la-mediatheque"
         },
         {
-            text: "Les equipements sportifs et loisir",
-            target: "/les-equipements-sportifs-et-loisir"
+            text: "Les équipements sportifs et loisir",
+            target: "/equipements-sportifs-et-loisir"
         },
         {
             text: "Les commerces et entreprises",

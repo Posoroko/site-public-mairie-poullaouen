@@ -55,7 +55,8 @@ const directusRefs = {
         ecoleSections: 'Ecole_sections',
         ecoleSectionsCustom: 'Ecole_sections_custom',
         headerImagesUrl: 'Header_images_url',
-        assosTypes: 'Assos_types'
+        assosTypes: 'Assos_types',
+        businessTypes: 'business_types',
     },
     folders: {
         actualites: 'c83b0592-948f-4d0b-bc63-cddfb4325446',

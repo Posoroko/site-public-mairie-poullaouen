@@ -1,8 +1,8 @@
 import Ecole from '@/views/mon quotidien/Ecole'
 import Associations from '@/views/mon quotidien/Associations'
-// import Bibliothèque from '@/views/mon quotidien/Bibliothèque'
-// import Entreprises from '@/views/mon quotidien/Entreprises'
-// import Equipement from '@/views/mon quotidien/Entreprises'
+import Mediatheque from '@/views/mon quotidien/Mediatheque'
+import Entreprises from '@/views/mon quotidien/Entreprises'
+import Equipements from '@/views/mon quotidien/Equipements'
 // import Poste from '@/views/mon quotidien/Poste'
 
 
@@ -18,21 +18,21 @@ const routesMonQuotidien =  {
         name: 'Associations',
         component: Associations
     },
-    // bibliothèque: {
-    //     path: '/bibliothèque',
-    //     name: 'Bibliothèque',
-    //     component: Bibliothèque
-    // },
-    // équipementSportif: {
-    //     path: '/équipements-de-sport-et-de-loisir',
-    //     name: 'Equipement',
-    //     component: Equipement
-    // },
-    // entreprises: {
-    //     path: '/commerces-et-entreprises',
-    //     name: 'Entreprises',
-    //     component: Entreprises
-    // },
+    Mediatheque: {
+        path: '/la-mediatheque',
+        name: 'Mediatheque',
+        component: Mediatheque
+    },
+    equipements: {
+        path: '/equipements-sportifs-et-loisir',
+        name: 'Equipements',
+        component: Equipements
+    },
+    entreprises: {
+        path: '/commerces-et-entreprises',
+        name: 'Entreprises',
+        component: Entreprises
+    },
     // poste: {
     //     path: '/la-poste',
     //     name: 'Poste',

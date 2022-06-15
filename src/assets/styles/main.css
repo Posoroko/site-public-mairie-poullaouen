@@ -8,8 +8,8 @@
     --brown: #936037;
     --green: #63b32e;
 
-    --boxshadow: 2px 4px 3px #00000084;
-    --boxshadowlift: 2px 4px 5px #000000bc;
+    --boxshadow: 1px 1px 5px #000000b9;
+    --boxshadowlift: 2px 4px 6px #000000bc;
 
     --buttonradius: 5px;
     --panelradius: 15px;
@@ -149,28 +149,4 @@ to sections with filter buttons -----*/
 
 
 
-/* order of text and image */
-.customSectionsBox :nth-child(odd) * * .box1{
-    order: 1;
-    color: var(--darkblue);
-}
-.customSectionsBox :nth-child(odd) * * .box2{
-    order: 2;
-}
-.customSectionsBox :nth-child(even) * * .box1{
-    order: 2;
-    color: white;
-}
-.customSectionsBox :nth-child(even) * * .box2{
-    order: 1;
-}
-/* background color */
-.customSectionsBox :nth-child(4n+2) .bandeau{
-    background-color: var(--darkblue);
-}
-.customSectionsBox :nth-child(4n+4) .bandeau{
-    background-color: var(--brown);
-}
-.customSectionsBox :nth-child(4n+4) .bandeau .contentBox .box2 .foot svg .pied{
-    fill: white;
-}
+

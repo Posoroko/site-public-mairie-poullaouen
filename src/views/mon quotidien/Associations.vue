@@ -9,7 +9,13 @@
                 <p class="mainWidth marginAuto marginTop20 lightText">
                     Filtrez les associations par thème
                 </p> 
-                <button class="filterButton lightBtn" v-for="filter in filters" :name="filter.value" :key="filter.value" @click="filterResults">{{ filter.text }}</button>
+                <button class="filterButton lightBtn" 
+                    v-for="filter in filters" 
+                    :name="filter.value" 
+                    :key="filter.value" 
+                    @click="filterResults">
+                        {{ filter.text }}
+                </button>
             </div>
         </div>
         <section class="sectionAsso width100 marginTop50">

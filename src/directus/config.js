@@ -1,6 +1,8 @@
 import { Directus } from '@directus/sdk'
 
-const directus = new Directus('http://localhost:8055')
+const directusAddress = 'http://localhost:8055'
+const directus = new Directus(directusAddress)
 
 
-export { directus }
+
+export { directus, directusAddress }

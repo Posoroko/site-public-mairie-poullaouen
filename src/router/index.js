@@ -21,7 +21,9 @@ const routes = [
 
   routesMonQuotidien.associations,
   routesMonQuotidien.ecole,
-
+  routesMonQuotidien.Mediatheque,
+  routesMonQuotidien.equipements,
+  routesMonQuotidien.entreprises
 ]
 
 const router = createRouter({
