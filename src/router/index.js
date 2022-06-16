@@ -2,6 +2,7 @@ import { headerImages } from '@/assets/images/imageUrls.js'
 
 import { routesMaMairie } from '@/router/routesMaMairie'
 import { routesMonQuotidien } from '@/router/routesMonQuotidien'
+import { routesMesSorties } from '@/router/routesMesSorties'
 
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
@@ -23,7 +24,9 @@ const routes = [
   routesMonQuotidien.ecole,
   routesMonQuotidien.Mediatheque,
   routesMonQuotidien.equipements,
-  routesMonQuotidien.entreprises
+  routesMonQuotidien.entreprises,
+
+  routesMesSorties.histoire,
 ]
 
 const router = createRouter({

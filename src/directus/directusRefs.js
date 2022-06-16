@@ -57,6 +57,7 @@ const directusRefs = {
         headerImagesUrl: 'Header_images_url',
         assosTypes: 'Assos_types',
         businessTypes: 'business_types',
+        histoire: 'Histoire',
     },
     folders: {
         actualites: 'c83b0592-948f-4d0b-bc63-cddfb4325446',

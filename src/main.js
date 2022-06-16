@@ -9,7 +9,7 @@ import '@/assets/styles/basic styles/textStyles.css'
 import '@/assets/styles/basic styles/basicStyles.css'
 import '@/assets/styles/basic styles/flex.css'
 import '@/assets/styles/basic styles/devStyles.css'
-
+import '@/assets/styles/default-section.css'
 
 createApp(App).use(router).mount('#app')
 

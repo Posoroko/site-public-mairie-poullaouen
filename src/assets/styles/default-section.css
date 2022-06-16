@@ -1,0 +1,95 @@
+/* styles pour la section par défault: text et image avec les pieds */
+/* order of text and image */
+
+.defaultSection:nth-child(even) * * .defaultSectionBox1{
+    order: 2;
+    color: white;
+}
+.defaultSection:nth-child(even) * * .defaultSectionBox2{
+    order: 1;
+}
+
+.defaultSection:nth-child(odd) * * .defaultSectionBox1{
+    order: 1;
+    color: var(--darkblue);
+}
+.defaultSection:nth-child(odd) * * .defaultSectionBox2{
+    order: 2;
+}
+
+/* background color */
+.defaultSection:nth-child(4n+2) .defaultSectionBandeau{
+    background-color: var(--darkblue);
+}
+.defaultSection:nth-child(4n+4) .defaultSectionBandeau{
+    background-color: var(--brown);
+}
+.defaultSection:nth-child(4n+4) .defaultSectionBandeau .defaultSectionContentBox .defaultSectionBox2 .defaultSectionFoot svg .defaultSectionPied{
+    fill: white;
+}
+
+.schedule{
+    width: 100%;
+}
+
+#Calque_1{
+    overflow: visible;
+}
+.defaultSectionFoot{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.defaultSectionPied{
+    fill: var(--brown);
+    filter: drop-shadow(var(--boxshadow));
+}
+.defaultSectionFigBox{
+    padding: 15%;
+}
+.img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.defaultSectionBandeau{
+    padding: 30px 0;
+    margin-top: 50px;
+}
+.defaultSectionText{
+    text-align: justify;
+    white-space: pre-wrap
+}
+.defaultSectionMoreInfo{
+    font-style: italic;
+    font-size: 6px;
+    margin-top: 20px;
+}
+.defaultSectionBox{
+    padding: 20px;
+}
+.defaultSectionBox1{
+    width: min(100%, 595px);
+}
+.defaultSectionBox1 > p {
+    font-size: max(15px, 1.25vw);
+    font-weight: 300;
+    letter-spacing: 0.2px;
+    line-height: 30px;
+}
+.defaultSectionBox2{
+    width: min(100%, 595px);
+}
+@media (max-width: 1200px){
+    .defaultSection:nth-child(even) .defaultSectionBandeau .defaultSectionContentBox{
+        flex-direction: column;
+    }
+    .defaultSection:nth-child(odd) .defaultSectionBandeau .defaultSectionContentBox{
+        flex-direction: column-reverse;
+    }
+}
+@media (min-width: 1201px){
+    .defaultSectionContentBox{
+        flex-direction: row;
+    }
+}
