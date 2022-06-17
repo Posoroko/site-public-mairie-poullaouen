@@ -1,5 +1,5 @@
 <template>
-    <div class="sectionTitleBox mainWidth">
+    <div class="sectionTitleBox mainWidth marginAuto">
         <h1>{{title}}</h1>
 
         <div class="stripe"></div>

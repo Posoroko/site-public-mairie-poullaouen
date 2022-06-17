@@ -58,6 +58,7 @@ const directusRefs = {
         assosTypes: 'Assos_types',
         businessTypes: 'business_types',
         histoire: 'Histoire',
+        patrimoine: 'Patrimoine',
     },
     folders: {
         actualites: 'c83b0592-948f-4d0b-bc63-cddfb4325446',

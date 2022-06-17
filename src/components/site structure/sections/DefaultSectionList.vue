@@ -1,13 +1,15 @@
 <template>
-    <div class="defaultSectionListBox width100">
+    <!-- <div class="defaultSectionListBox width100"> -->
         <section class="defaultSection width100 flex column alignItemsCenter"  v-for="item in items" :key="item.id">
 
-            <SectionTitleBox :title="item.title" color="var(--darkblue)" />
+            <div class="width100" v-if="item.title">
+                <SectionTitleBox :title="item.title" color="var(--darkblue)" />
+            </div>
 
             <div class="defaultSectionBandeau width100 flex center">
                 <div class="defaultSectionContentBox mainWidth flex center alignItemsCenter">
-                    <div class="defaultSectionBox defaultSectionBox1 centered">
-                        <p class="defaultSectionSubtitle">{{ item.subtitle }}</p>
+                    <div class="defaultSectionBox defaultSectionBox1">
+                        <p class="defaultSectionSubtitle">{{ item.subTitle }}</p>
                         <p class="defaultSectionText">{{item.text}}</p>
                         <p class="defaultSectionMoreInfo"> {{item.moreInfo}}</p>
                     </div>
@@ -19,15 +21,24 @@
                         </div>
                         <div class="defaultSectionFigBox absolute top right bottom left centered">
                             <figure v-if="item.photo">
-                                <img class="width100" :src="directusAddress + '/assets/' + item.photo + '.jpg'" :alt="item.alt">
+                                <img 
+                                class="width100 pointer" 
+                                :src="directusAddress + '/assets/' + item.photo + '.jpg'" 
+                                :alt="item.alt"
+                                @click="showImageInModal">
                             </figure>
                         </div>
                     </div>
                 </div>
 
-            </div>
+            </div>    
         </section>
-    </div>
+    <!-- </div> -->
+
+    <dialog ref="modal" class="modalImage marginAuto"  @click="modal.close()">
+        <img :src="requestedImage">
+        <span class="icon absolute top right">close</span>
+    </dialog>
 </template>
 
 <script setup>
@@ -35,6 +46,15 @@ import { ref } from 'vue';
 import SectionTitleBox from '@//components/site structure/SectionTitleBox'
 
 import { directusAddress } from '@/directus/config'
+
+const requestedImage = ref('')
+const modal = ref(null)
+
+const showImageInModal = (e) => {
+    requestedImage.value = e.target.getAttribute('src')
+    modal.value.showModal()
+}
+
 
 const props = defineProps({
     items: Object
@@ -46,6 +66,22 @@ const props = defineProps({
 </script>
 
 <style scoped>
-
-
+.defaultSectionSubtitle{
+    font-size: max(17px, 1.4vw);
+    font-weight: 600;
+    text-align: left;
+}
+.defaultSectionMoreInfo{
+    font-style: italic;
+    font-size: clamp(12px, 1.5vw, 20px);
+    margin-top: 20px;
+}
+.defaultSectionBox1 > .defaultSectionText {
+    font-size: clamp(12px, 1.5vw, 20px);
+    font-weight: 300;
+    letter-spacing: 0.2px;
+    line-height: 30px;
+    text-align: justify;
+    margin-top: 20px;
+}
 </style>

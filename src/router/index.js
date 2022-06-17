@@ -27,6 +27,7 @@ const routes = [
   routesMonQuotidien.entreprises,
 
   routesMesSorties.histoire,
+  routesMesSorties.patrimoine,
 ]
 
 const router = createRouter({

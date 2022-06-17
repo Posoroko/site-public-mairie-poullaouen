@@ -81,9 +81,9 @@
             </div>
     </section>
 
-    <dialog ref="modal" class="modalImage marginAuto">
+    <dialog ref="modal" class="modalImage marginAuto"  @click="modal.close()">
         <img :src="requestedImage" :alt="requestedImageAlt">
-        <span class="icon absolute top right" @click="modal.close()">close</span>
+        <span class="icon absolute top right">close</span>
     </dialog>
     
     <!-- <div class="width100 r">

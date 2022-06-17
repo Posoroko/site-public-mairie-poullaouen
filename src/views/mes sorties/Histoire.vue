@@ -2,7 +2,9 @@
     <PageHeader :title="pageTitle" :path="pagePath" />
     
     <main>
+
         <DefaultSectionList :items="items" />
+
     </main>
 </template>
 
@@ -12,6 +14,7 @@ import PageHeader from '@/components/site structure/PageHeader'
 import DefaultSectionList from '@/components/site structure/sections/DefaultSectionList'
 import { getCollection } from '@/directus/directusLibrary'
 import directusRefs from '@/directus/directusRefs'
+
 
 
 const error = ref(null)

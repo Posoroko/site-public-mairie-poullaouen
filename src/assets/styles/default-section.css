@@ -60,23 +60,14 @@
     text-align: justify;
     white-space: pre-wrap
 }
-.defaultSectionMoreInfo{
-    font-style: italic;
-    font-size: 6px;
-    margin-top: 20px;
-}
+
 .defaultSectionBox{
     padding: 20px;
 }
 .defaultSectionBox1{
     width: min(100%, 595px);
 }
-.defaultSectionBox1 > p {
-    font-size: max(15px, 1.25vw);
-    font-weight: 300;
-    letter-spacing: 0.2px;
-    line-height: 30px;
-}
+
 .defaultSectionBox2{
     width: min(100%, 595px);
 }
@@ -92,4 +83,25 @@
     .defaultSectionContentBox{
         flex-direction: row;
     }
+}
+
+
+/* section manoir */
+
+.sectionManoirs{
+    background-color: var(--brown);
+}
+.bandeauManoirs{
+    color: white;
+    font-size: 20px;
+    line-height: 30px;
+    padding: 30px 0;
+}
+
+.manoireParagraph{
+    width: 45%;
+    /* padding-top: 20px; */
+}
+.manoireTitle{
+    line-height:  30px;
 }
