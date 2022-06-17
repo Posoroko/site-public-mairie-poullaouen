@@ -1,6 +1,6 @@
 import Histoire from '@/views/mes sorties/Histoire'
 import Patrimoine from '@/views/mes sorties/Patrimoine'
-// import Randonnées from '@/views/mes sorties/Randonnées'
+import Randonnees from '@/views/mes sorties/Randonnees'
 // import LogerRestaurer from '@/views/mes sorties/LogerRestaurer'
 // import Fleuri from '@/views/mes sorties/Fleuri'
 // import Loisirs from '@/views/mes sorties/Loisirs'
@@ -16,11 +16,11 @@ const routesMesSorties = {
         name: 'Patrimoine',
         component: Patrimoine
     },
-    // randonnées: {
-    //     path: textes.routesSorties.randonnées,
-    //     name: 'Randonnées',
-    //     component: Randonnées
-    // },
+    randonnees: {
+        path: '/les-chemins-de-randonnees',
+        name: 'Randonnees',
+        component: Randonnees
+    },
     // logerRestaurer: {
     //     path: textes.routesSorties.logerRestaurer,
     //     name: 'LogerRestaurer',

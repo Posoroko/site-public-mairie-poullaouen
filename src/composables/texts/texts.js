@@ -98,7 +98,7 @@ const menuTexts = {
     demarches: [
         {
             text: "Toutes vos démarches en ligne",
-            target: "www.servicespublic.fr"
+            target: "/mes-demarches"
         }
     ]
 }

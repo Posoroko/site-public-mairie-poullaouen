@@ -149,4 +149,53 @@ to sections with filter buttons -----*/
 
 
 
-
+.topText {
+    font-size: clamp(14px, 1vw, 22px);
+    margin-top: 30px;
+}
+.home-item-icon{
+    width: 100px;
+    margin: auto;
+}
+.home-theme-list-item{
+    padding: 10px;
+    width: 220px;
+    border: 1px solid gray;
+    margin: 5px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.list-item-title{
+    text-align: center;
+}
+.home-theme-list-item ul {
+    margin-top: 5px;
+}
+.home-theme-list-item ul li {
+    text-align: center;
+}
+.bottomBox{
+    width: min(800px, 100%);
+    padding: 20px;
+    border: 1px solid gray;
+    margin: 20px auto; 
+}
+.list-top-dotted li {
+    margin-top: 5px;
+}
+.list-top-dotted li, .co-panel-heading h2 {
+    color: var(--darktext);
+}
+.co-panel-body{
+    margin-top: 10px;
+}
+.link-all a{
+    color: white;
+    font-size: clamp(12px, 1vw, 22px);
+    background-color: var(--darkblue);
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin-top: 10px;
+    display: inline-block;
+}
