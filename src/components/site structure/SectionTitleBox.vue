@@ -13,11 +13,10 @@ const props = defineProps({
     title: String,
     color: String
 })
+
 const titleColor = ref(null)
 
-onMounted(() => {
-    titleColor.value = props.color
-})
+
 
 
 </script>

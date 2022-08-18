@@ -12,7 +12,7 @@
                 <SectionTitleBox :title="section.title" color="var(--darkblue)" />
 
 <!-- section standard -->
-                <div class="sectionBandeau width100 flex center" v-if="section.format == 'section'">
+                <div class="defaultSectionBandeau width100 flex center" v-if="section.format == 'section'">
                     <div class=" defaultSectionContentBox mainWidth flex center alignItemsCenter">
                         <div class="defaultSectionBox defaultSectionBox1 text centered">
                             <p class="text">{{section.text}}</p>
@@ -22,7 +22,7 @@
                         <div class="defaultSectionBox defaultSectionBox2 text relative flex alignCenter">
                             <div class="foot">
                                 <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 692.1 615.2" style="enable-background:new 0 0 692.1 615.2;" xml:space="preserve"><g>
-                                    <path class="pied "  d="M192,0l98.5,43.3L135,397.2l173.7,76.3l-36.5,83L0,436.9L192,0z"/><path class="pied" d="M294.7,150.3L399.5,126l87.3,376.6l184.8-42.9l20.5,88.3l-289.6,67.2L294.7,150.3z"/></g></svg>
+                                    <path class="pied defaultSectionFoot"  d="M192,0l98.5,43.3L135,397.2l173.7,76.3l-36.5,83L0,436.9L192,0z"/><path class="pied defaultSectionFoot" d="M294.7,150.3L399.5,126l87.3,376.6l184.8-42.9l20.5,88.3l-289.6,67.2L294.7,150.3z"/></g></svg>
                             </div>
                             <div class="figBox absolute top right bottom left centered">
                                 <figure>
@@ -46,10 +46,10 @@
         </div>
             
 
-<!-- default sections  -->
+<!-- custom sections  -->
 
-        <div class="defaultSectionBox">
-            <section class="defaultSection width100 flex column alignItemsCenter"  v-for="section in customSections" :key="section.id">
+        <div class="customSectionBox">
+            <section class="customSection width100 flex column alignItemsCenter"  v-for="section in customSections" :key="section.id">
 
                 <SectionTitleBox :title="section.title" color="var(--darkblue)" />
 
@@ -63,7 +63,7 @@
                         <div class="defaultSectionBox defaultSectionBox2 text relative flex alignCenter">
                             <div class="defaultSectionFoot">
                                 <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 692.1 615.2" style="enable-background:new 0 0 692.1 615.2;" xml:space="preserve"><g>
-                                    <path class="defaultSectionPied "  d="M192,0l98.5,43.3L135,397.2l173.7,76.3l-36.5,83L0,436.9L192,0z"/><path class="pied" d="M294.7,150.3L399.5,126l87.3,376.6l184.8-42.9l20.5,88.3l-289.6,67.2L294.7,150.3z"/></g></svg>
+                                    <path class="defaultSectionFoot"  d="M192,0l98.5,43.3L135,397.2l173.7,76.3l-36.5,83L0,436.9L192,0z"/><path class="defaultSectionFoot" d="M294.7,150.3L399.5,126l87.3,376.6l184.8-42.9l20.5,88.3l-289.6,67.2L294.7,150.3z"/></g></svg>
                             </div>
                             <div class="defaultSectionFigBox absolute top right bottom left centered">
                                 <figure>
@@ -126,24 +126,24 @@ getCollection(directusRefs.collections.ecoleSectionsCustom, -1).then(res => {
 <style scoped>
 /* preset sections */
 /*-- image order --*/
-.presetSection:nth-child(1) * * .box1, 
-.presetSection:nth-child(4) * * .box1, 
-.presetSection:nth-child(6) * * .box1{
+.presetSection:nth-child(1) * * .defaultSectionBox1, 
+.presetSection:nth-child(4) * * .defaultSectionBox1, 
+.presetSection:nth-child(6) * * .defaultSectionBox1,
+.presetSection:nth-child(8) * * .defaultSectionBox1{
     order: 2;
 }
-.presetSection:nth-child(1) * * .box2, 
-.presetSection:nth-child(4) * * .box2,  
-.presetSection:nth-child(6) * * .box2{
+.presetSection:nth-child(1) * * .defaultSectionBox2, 
+.presetSection:nth-child(4) * * .defaultSectionBox2,  
+.presetSection:nth-child(6) * * .defaultSectionBox2,
+.presetSection:nth-child(8) * * .defaultSectionBox2{
     order: 1;
 }
-.presetSection:nth-child(3) * * .box1,
-.presetSection:nth-child(5) * * .box1,
-.presetSection:nth-child(8) * * .box1{
+.presetSection:nth-child(3) * * .defaultSectionBox1,
+.presetSection:nth-child(5) * * .defaultSectionBox1{
     order: 1;
 }
-.presetSection:nth-child(3) * * .box2,
-.presetSection:nth-child(5) * * .box2,
-.presetSection:nth-child(8) * * .box2{
+.presetSection:nth-child(3) * * .defaultSectionBox2,
+.presetSection:nth-child(5) * * .defaultSectionBox2{
     order: 2;
 }
 /*----- text color -----*/
@@ -159,17 +159,48 @@ getCollection(directusRefs.collections.ecoleSectionsCustom, -1).then(res => {
 }
 
 /* background color */
-.presetSection:nth-child(4) .sectionBandeau{
+.presetSection:nth-child(4) .defaultSectionBandeau{
     background-color: var(--brown);    
 }
-.presetSection:nth-child(6) .sectionBandeau{
+.presetSection:nth-child(6) .defaultSectionBandeau{
     background-color: var(--darkblue);    
 }
 /* foot color */
-.presetSection:nth-child(4) .sectionBandeau .sectionBandeau .box2 .foot svg .pied{
+.presetSection:nth-child(4) .defaultSectionBandeau .defaultSectionBox2 .foot svg .pied{
     fill: white;
 }
 
+/* custom sections */
+
+/* backgrond color */
+.customSection:nth-child(4n+2) .defaultSectionBandeau{
+    background-color: var(--darkblue);   
+}
+
+.customSection:nth-child(4n+4) .defaultSectionBandeau{
+    background-color: var(--brown);   
+}
+
+/* text color */
+
+.customSection:nth-child(4n+2) *,
+.customSection:nth-child(4n+4) *{
+    color: var(--lighttext);  
+}
+
+/* page format */
+
+.customSection:nth-child(even) * * .defaultSectionBox1 {
+    order: 2;
+}
+.customSection:nth-child(odd) * * .defaultSectionBox2 {
+    order: 1;
+}
+/* foot color */
+
+.customSection:nth-child(4n+4) * * * * * .defaultSectionFoot{
+    fill: white;   
+}
 
 
 

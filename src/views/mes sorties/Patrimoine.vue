@@ -1,27 +1,27 @@
 <template>
     <PageHeader :title="pageTitle" :path="pagePath" />
     
-    <main>
-        <SectionTitleBox title="Les églises" color="var(--darkblue)" />
-        <DefaultSectionList :items="eglises"/>
+    <main class="mainPatrimoine">
 
+        <SectionTitleBox title="Les églises" color="var(--darkblue)" />
+        <DefaultSectionList :items="eglises" />
+        
         <SectionTitleBox title="Les chapelles" color="var(--darkblue)" />
         <DefaultSectionList :items="chapelles" />
-
+                
         <SectionTitleBox title="Les calvaires" color="var(--darkblue)" />
         <DefaultSectionList :items="calvaires" />
-
+        
         <SectionTitleBox title="Les fontaines" color="var(--darkblue)" />
         <DefaultSectionList :items="fontaines" />
-
+        
         <SectionTitleBox title="Les ponts" color="var(--darkblue)" />
         <DefaultSectionList :items="ponts" />
-
+        
         <SectionTitleBox title="Les fours" color="var(--darkblue)" />
         <DefaultSectionList :items="fours" />
 
         <SectionTitleBox title="Les manoirs" color="var(--darkblue)" />
-        
         <section class="sectionManoirs width100 marginTop20" v-if="manoires[0]">
             <div class="bandeauManoirs mainWidth marginAuto flex spaceBetween">
                 <p class="manoireParagraph">
@@ -36,14 +36,14 @@
                 </p>
             </div>
         </section>
-
+    
         <DefaultSectionList :items="divers" />
 
     </main>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import PageHeader from '@/components/site structure/PageHeader'
 import DefaultSectionList from '@/components/site structure/sections/DefaultSectionList'
 import { getCollection } from '@/directus/directusLibrary'
@@ -114,11 +114,55 @@ const sortItems = (items) => {
     }
 }
 
+//applying color styles to sections
+let sections = null
+
+const styleSections = () => {
+    sections = document.querySelectorAll('.defaultSectionBandeau')
+    
+    for(let i = 0; i <= sections.length - 1; i = i + 2) {
+        sections[i].firstElementChild.style.color = "var(--darkblue)"
+    }
+
+    //set blue background and light text
+    for(let i = 1; i <= sections.length - 1; i = i + 4) {
+        sections[i].style.backgroundColor = 'var(--darkblue)'
+        sections[i].firstElementChild.style.color = "var(--lighttext)"
+    }
+
+    //set brown background, light text and light feet
+    for(let i = 3; i <= sections.length -1; i = i + 4) {
+        sections[i].style.backgroundColor = 'var(--brown)'
+        sections[i].firstElementChild.style.color = "var(--lighttext)"
+        sections[i].firstElementChild.querySelector('.defaultSectionBox2')
+        .firstElementChild.firstElementChild.firstElementChild.querySelector('.leftFoot').style.fill = "white";
+        sections[i].firstElementChild.querySelector('.defaultSectionBox2')
+        .firstElementChild.firstElementChild.firstElementChild.querySelector('.rightFoot').style.fill = "white";
+    }
+}
+
+onMounted(() => {
+    waitForDom()
+
+})
+
+//To wait for child components DOM nodes to be accessible. 
+
+const waitForDom = () => {
+    setTimeout(() => {
+        if (document.querySelectorAll('.defaultSectionBandeau'.length > 0)) {
+            styleSections()
+        } else {
+            waitForDom()
+        }
+    }, 500)
+}
+
+
 
 </script>
 
-<style scoped>
-
+<style >
 
 
 </style>
