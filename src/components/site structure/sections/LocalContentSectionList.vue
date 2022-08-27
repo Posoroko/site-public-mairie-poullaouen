@@ -1,7 +1,7 @@
 <template>
     <!-- <div class="defaultSectionListBox width100"> -->
         <section class="defaultSection width100 flex column alignItemsCenter"  v-for="item in items" :key="item.id">
-
+            
             <div class="width100" v-if="item.title">
                 <SectionTitleBox :title="item.title" color="var(--darkblue)" />
             </div>
@@ -10,7 +10,7 @@
                 <div class="defaultSectionContentBox mainWidth flex center alignItemsCenter">
                     <div class="defaultSectionBox sectionBox1">
                         <p class="defaultSectionSubtitle">{{ item.subTitle }}</p>
-                        <p class="defaultSectionText">{{item.text}}</p>
+                        <p class="defaultSectionText" v-for="para in item.text" :key="para">{{para}} <br><br> </p>
                         <p class="defaultSectionMoreInfo"> {{item.moreInfo}}</p>
                     </div>
 

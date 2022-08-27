@@ -7,10 +7,10 @@
         <section class="width100 flex column alignItemsCenter" v-for="salle in salles" :key="salle.content.title">
             <SectionTitleBox :title="salle.content.title" :color="salle.styles.titleColor" />
 
-            <div class="bandeau width100 flex center marginTop30" :style="{ backgroundColor: salle.styles.backgroundColor}">
+            <div class="sectionBandeau width100 flex center marginTop30" :style="{ backgroundColor: salle.styles.backgroundColor}">
                 <div class="contentBox mainWidth flex center alignItemsCenter">
                 
-                    <div class="box box1 text centered" :style="{ color: salle.styles.textColor}">
+                    <div class="box sectionBox1 text centered" :style="{ color: salle.styles.textColor}">
                         <p>
                             {{salle.content.text}}
                             <br>
@@ -68,8 +68,8 @@
                         
                     </div>
 
-                    <div class="box box2 text relative flex alignCenter">
-                        <Pieds :color="salle.styles.footColor"/>
+                    <div class="box sectionBox2 text relative flex alignCenter">
+                        <Pieds />
 
                         <div class="figBox absolute top right bottom left centered pointer">
                             <figure>
@@ -93,12 +93,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import Pieds from '@/components/site structure/Pieds'
 import SectionTitleBox from '@/components/site structure/SectionTitleBox'
 import PageHeader from '@/components/site structure/PageHeader'
 import salles from '@/composables/texts/sallesMunicipales'
 import Carousel from '@/components/site structure/widgets/Carousel'
+import stylesSections from '@/composables/sectionColorsOrder'
 
 
 const pageTitle = ref("Les salles municipales")
@@ -119,6 +120,10 @@ const openImage = (e) => {
     modal.value.showModal()
 }
 
+onMounted(() => {
+    stylesSections()
+})
+
 </script>
 
 <style scoped>
@@ -130,8 +135,7 @@ const openImage = (e) => {
     height: 100%;
     object-fit: cover;
 }
-.bandeau{
-    background-color: v-bind(backgroundColor);
+.sectionBandeau{
     padding: 30px 0;
 }
 

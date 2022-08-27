@@ -68,17 +68,5 @@ const contentSectionActivites = {
 
 <style scoped>
 
-/* @media (min-width: 749px){
-    .mayorSectionContentBox > .innerBox{
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .leftBox{
-        width: 42%;
-    }
-    .rightBox{
-        width: 52%;
-    }
-} */
 
 </style>

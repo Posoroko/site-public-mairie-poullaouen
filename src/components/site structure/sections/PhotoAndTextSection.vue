@@ -3,15 +3,20 @@
 
             <SectionTitleBox :title="content.title" :color="styles.titleColor" />
 
-            <div class="bandeau width100 flex center">
+            <div class="sectionBandeau width100 flex center">
                 <div class="contentBox mainWidth flex center alignItemsCenter">
                 
-                    <div class="box box1 text centered">
+                    <div class="box sectionBox1 text centered">
                         <p v-html="content.text"></p>
                     </div>
 
-                    <div class="box box2 text relative flex alignCenter">
-                        <Pieds :color="footColor"/>
+                    <div class="box sectionBox2 text relative flex alignCenter">
+                        <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 692.1 615.2" style="enable-background:new 0 0 692.1 615.2;" xml:space="preserve">
+                                <g>
+                                    <path class="defaultSectionPied leftFoot"  d="M192,0l98.5,43.3L135,397.2l173.7,76.3l-36.5,83L0,436.9L192,0z"/>
+                                    <path class="defaultSectionPied rightFoot"  d="M294.7,150.3L399.5,126l87.3,376.6l184.8-42.9l20.5,88.3l-289.6,67.2L294.7,150.3z"/>
+                                </g>
+                            </svg>
                         <div class="figBox absolute top right bottom left centered">
                             <figure>
                                 <img class="width100" src="@/assets/images/mairie.jpg" alt="">
