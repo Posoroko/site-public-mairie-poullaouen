@@ -27,8 +27,8 @@
                             <figure v-if="item.photo">
                                 <img 
                                 class="width100 pointer" 
-                                :src="directusAddress + '/assets/' + item.photo + '.jpg'" 
-                                :alt="item.alt"
+                                src="" 
+                                :alt="item.fileDescription"
                                 @click="showImageInModal">
                             </figure>
                         </div>

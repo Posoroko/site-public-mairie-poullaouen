@@ -41,10 +41,18 @@ const styleSections = () => {
         nodeList = document.querySelectorAll('.rightFoot')
         for(let i = 3; i <= nodeList.length -1; i = i + 4) {
             nodeList[i].style.fill = "white";
-            console.log(nodeList[i].style.fill)
         }
         //set order of text and image
-        
+
+        nodeList = document.querySelectorAll('.sectionBox1')
+        for(let i = 1; i <= nodeList.length -1; i = i + 2) {
+            nodeList[i].style.order = "2";
+        }
+        nodeList = document.querySelectorAll('.sectionBox2')
+        for(let i = 1; i <= nodeList.length -1; i = i + 2) {
+            nodeList[i].style.order = "1";
+        }
+
     }
     waitForDom()
 }

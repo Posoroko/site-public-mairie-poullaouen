@@ -182,10 +182,8 @@ const histoire = {
     ],
 
     conclusion: {
-        text: [
-            "Pour plus de renseignements concernant ces mines, vous pouvez contacter les organismes suivants :",
-            "ASAM (association de sauvegarde de l’ancienne mine) organise, à la demande, des visites guidées pour des groupes",
-        ],
+        text: "Pour plus de renseignements concernant ces mines, vous pouvez contacter les organismes suivants :",
+        asam: "ASAM (association de sauvegarde de l’ancienne mine) organise, à la demande, des visites guidées pour des groupes",
         website: "http://minelocmariaberrien.com",
         email: "asamlb@hotmail.fr",
         telLocmaria: "Mairie de Locmaria-Berrien: 02.98.99.73.09",
